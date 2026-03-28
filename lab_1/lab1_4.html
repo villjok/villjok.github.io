@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Работа с изображениями</title>
+</head>
+<body>
+
+<h1>Работа с изображениями</h1>
+
+<h2>Упражнение 1</h2>
+<img src="../images/aquaria.jpg" alt="Аквариумные рыбки" width="450">
+
+<h2>Упражнение 2 (некорректный путь)</h2>
+<img src="../images/elephant.png" alt="Слон — изображение отсутствует">
+
+<h2>Упражнение 3 (явные пропорции)</h2>
+<img src="../images/redcat.jpg" width="320" height="213" alt="Рыжий кот">
+
+<h2>Упражнение 4 (отзывчивые изображения)</h2>
+<img src="../images/mushroom.jpg"
+     srcset="../images/mushroom_portrait.jpg 576w,
+             ../images/mushroom_landscape.jpg 768w,
+             ../images/mushroom_retina.jpg 992w"
+     sizes="(min-width: 993px) 992px,
+            (min-width: 769px) 768px,
+            (min-width: 577px) 576px,
+            100vw"
+     alt="Лесной гриб">
+
+<h2>Упражнение 5 (иллюстрация с пояснением)</h2>
+<figure>
+    <img src="../images/globus.gif" alt="Вращающийся глобус">
+    <figcaption>Рисунок 1 — Глобус как трёхмерная модель Земли</figcaption>
+</figure>
+
+<h2>Упражнение 6 (форматы)</h2>
+<picture>
+    <source srcset="../images/html5-logo.svg" type="image/svg+xml">
+    <img src="../images/html5-logo.png" alt="Логотип HTML5">
+</picture>
+
+<h2>Упражнение 7 (современные форматы)</h2>
+<p>
+    <img src="../images/muscle.webp" alt="Изображение в формате WebP" width="180">
+    <img src="../images/light.avif" alt="Изображение в формате AVIF" width="180">
+</p>
+
+<p><a href="../index.html">← На главную</a></p>
+
+</body>
+</html>
