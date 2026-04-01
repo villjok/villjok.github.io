@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Атрибут target</title>
+</head>
+<body>
+
+<h1>Атрибут target</h1>
+
+<p>По умолчанию, при переходе по ссылке документ открывается в текущем окне или фрейме. При необходимости, это условие может быть изменено атрибутом <code>target</code> тега <code>&lt;a&gt;</code>. Этот атрибут может принимать следующие значения:</p>
+
+<p><code>_blank</code> — загружает страницу в новую вкладку или новое окно браузера (это зависит от настроек браузера);</p>
+<p><code>_self</code> — загружает страницу в текущее окно;</p>
+<p><code>_parent</code> — загружает страницу во фрейм-родитель;</p>
+<p><code>_top</code> — отменяет все фреймы и загружает страницу в полном окне браузера.</p>
+
+<p>Вместе с атрибутом <code>target="_blank"</code> обязательно используйте <code>rel="noopener noreferrer"</code>, чтобы в момент открытия внешние сайты не узнали лишнего про текущую страницу.</p>
+
+<p>В примере 3 показано создание ссылки на сайт, который открывается в новом окне.</p>
+
+<h2>Пример 3. Открытие документа в новом окне</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ru"&gt;
+ &lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Новое окно&lt;/title&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+  &lt;p&gt;&lt;a href="https://webref.ru" target="_blank" rel="noopener noreferrer"&gt;Ссылка открывает новое окно на сайт webref.ru&lt;/a&gt;&lt;/p&gt; 
+ &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+<p>Если на веб-странице необходимо сделать, чтобы все ссылки открывались в новом окне, нет необходимости добавлять во все теги &lt;a&gt; target="_blank". Код можно сократить, если вначале страницы добавить строку &lt;base target="_blank"&gt;, как показано в примере 4.</p>
+
+<h2>Пример 4. Использование тега &lt;base&gt;</h2>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ru"&gt;
+ &lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Открытие файла во фрейме&lt;/title&gt;
+  &lt;base target="_blank"&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+  &lt;p&gt;&lt;a href="1.html"&gt;Ссылка откроется в новом окне&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href="2.html" target="_self"&gt;Ссылка откроется в текущем окне&lt;/a&gt;&lt;/p&gt;
+ &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+<p>Сделать так, чтобы ссылка открывалась в текущем окне, в таком случае можно, если добавить к тегу &lt;a&gt; атрибут <code>target="_self"</code>.</p>
+
+</body>
+</html>

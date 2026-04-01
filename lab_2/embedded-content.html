@@ -1,0 +1,48 @@
+HTML<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.4 — Встраиваемый контент</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        iframe, video, audio { max-width: 100%; margin: 15px 0; border: 1px solid #ccc; }
+        figcaption { font-style: italic; text-align: center; color: #555; }
+    </style>
+</head>
+<body>
+
+    <h1>Встраиваемый контент</h1>
+
+    <h2>1. Видео с VK (iframe)</h2>
+    <figure>
+        <iframe src="https://vk.com/video_ext.php?oid=-202869502&id=456239024&hd=2" 
+                width="640" height="360" frameborder="0" allowfullscreen></iframe>
+        <figcaption>Видео с VK Video</figcaption>
+    </figure>
+
+    <h2>2. Яндекс Карта (iframe)</h2>
+    <figure>
+        <iframe src="https://yandex.ru/maps/10/orel/?ll=36.063909%2C52.951255&z=17" 
+                width="640" height="400" frameborder="0" allowfullscreen></iframe>
+        <figcaption>Карта Яндекс (Орёл)</figcaption>
+    </figure>
+
+    <h2>Демонстрация добавления на страницу видео</h2>
+    
+    <video width="640" controls>
+        <source src="oreluniver.mp4" type="video/mp4">
+        Ваш браузер не поддерживает видео.
+    </video>
+
+    <h2>Демонстрация добавления на страницу аудио</h2>
+    
+    <audio controls>
+        <source src="yuriy-gagarin-poehali.mp3" type="audio/mpeg">
+        <source src="yuriy-gagarin-poehali.ogg" type="audio/ogg">
+        Ваш браузер не поддерживает аудио.
+    </audio>
+
+</body>
+
+</html>
