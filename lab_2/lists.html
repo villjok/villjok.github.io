@@ -1,45 +1,66 @@
-HTML<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2.1 — Смешанный список</title>
+    <title>Задание 2 - Таблицы</title>
 </head>
 <body>
 
-    <h1>Каталог курсов</h1>
+<h1>Задание 2 — Таблицы</h1>
 
-    <ul>
-        <li>Курсы</li>
-        <li>
-            Каталог курсов
-            <ul>
-                <li>Курсы для пользователей</li>
-                <li>Компьютерные курсы для начинающих, Office 2003, Курсы для продвинутых пользователей</li>
-                <li>Настройка и ремонт ПК</li>
-                <li>Настройка офисных и домашних компьютеров, Техническое обслуживание и ремонт ПЭВМ</li>
-                <li>Интернет-технологии</li>
-                <li>Интернет, PHP, Web-мастеринг, Web-дизайн, Flash</li>
-                <li>Компьютерная графика, верстка, дизайн</li>
-                <li>Photoshop, CorelDRAW, QuarkXPress, InDesign</li>
-            </ul>
-        </li>
-        <li>Дистанционное обучение</li>
-        <li>Запись на курсы</li>
-        <li>Расписание курсов</li>
-        <li>Экзамены</li>
-        <li>Документы об окончании</li>
-    </ul>
+<h2>1-я таблица</h2>
+<table border="1" cellpadding="15" cellspacing="0">
+    <tr>
+        <th rowspan="3">1</th>
+        <td colspan="2">2</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>6</td>
+    </tr>
+</table>
 
-    <h2>Специальные предложения</h2>
-    <dl>
-        <dt>Скидки</dt>
-        <dd>Скидки</dd>
-        <dt>Обучение в кредит</dt>
-        <dd>Обучение в кредит</dd>
-        <dt>Бесплатные занятия для наших слушателей</dt>
-        <dd>Бесплатные занятия для наших слушателей</dd>
-    </dl>
+<h2>2-я таблица</h2>
+<table border="1" cellpadding="15" cellspacing="0">
+    <tr>
+        <th colspan="2">1</th>
+    </tr>
+    <tr>
+        <td rowspan="2">3</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td>6</td>
+    </tr>
+</table>
+
+<h2>3-я таблица</h2>
+<table border="1" cellpadding="15" cellspacing="0">
+    <tr>
+        <td>1</td>
+        <td rowspan="2">2</td>
+    </tr>
+    <tr>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td colspan="2">5</td>
+    </tr>
+</table>
+
+<h2>4-я таблица</h2>
+<table border="1" cellpadding="15" cellspacing="0">
+    <tr>
+        <th colspan="2">1</th>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>4</td>
+    </tr>
+    <tr>
+        <td colspan="2">5</td>
+    </tr>
+</table>
 
 </body>
 </html>
