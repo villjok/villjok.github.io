@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 5 - Форма регистрации</title>
+</head>
+<body>
+
+<h1>Форма регистрации пользователя</h1>
+
+<form method="post" action="#">
+
+    <p>
+        Е-mail<br>
+        <input type="email" placeholder="Введите e-mail" required>
+    </p>
+
+    <p>
+        Пароль<br>
+        <input type="password" placeholder="Введите пароль" required>
+    </p>
+
+    <p>Пол</p>
+    <p>
+        <input type="radio" name="gender" id="male" value="male">
+        <label for="male">Мужчина</label><br>
+        
+        <input type="radio" name="gender" id="female" value="female">
+        <label for="female">Женщина</label>
+    </p>
+
+    <p>
+        Год рождения<br>
+        <select>
+            <option value="">Выберите год</option>
+            <option value="1981" selected>1981</option>
+            <option value="1990">1990</option>
+            <option value="1995">1995</option>
+            <option value="2000">2000</option>
+            <option value="2005">2005</option>
+             <option value="2006">2006</option>
+        </select> -й
+    </p>
+
+    <p>Я знаю</p>
+    <p>
+        <input type="checkbox" id="russian" checked disabled>
+        <label for="russian">Русский</label><br>
+        
+        <input type="checkbox" id="spanish">
+        <label for="spanish">Испанский</label><br>
+        
+        <input type="checkbox" id="german">
+        <label for="german">Немецкий</label><br>
+        
+        <input type="checkbox" id="english">
+        <label for="english">Английский</label><br>
+        
+        <input type="checkbox" id="chinese">
+        <label for="chinese">Китайский</label>
+    </p>
+
+    <p>
+        Обо мне<br>
+        <textarea placeholder="Напишите коротко о себе" rows="5" cols="50"></textarea>
+    </p>
+
+    <p>
+        <button type="submit">Готово</button>
+        <button type="reset">Очистить</button>
+    </p>
+
+</form>
+
+</body>
+</html>
