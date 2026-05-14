@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Оформление вертикального меню</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+	<style>
+		html {
+			background: #f0f0f0;
+		}
+		
+		.menu {
+			width: 200px;
+			background: #fff;
+			padding: 10px;
+		}
+		
+		.menu ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		
+		.menu li {
+			position: relative;
+			padding-left: 20px;
+			margin: 5px 0;
+		}
+		
+		.menu li::before {
+			content: "\f192"; 
+			font-family: "Font Awesome 6 Free";
+			position: absolute;
+			left: 0;
+			top: 2px;
+			color: #000000;
+		}
+		
+		.menu > ul > li::before {
+			content: "\f0fe";
+		}
+		
+		.menu > ul > li:hover::before {
+			content: "\f146";
+		}
+		
+		.menu li a {
+			text-decoration: underline;
+			color: rgb(78, 122, 166);
+			font-family: Arial, sans-serif;
+		}
+		
+		.menu li a:hover {
+			color: #f00;
+		}
+		
+		.menu li ul {
+			display: none;
+			margin-bottom: 20px;
+			padding-left: 0;
+		}
+
+		.menu li:hover > ul {
+			display: block;
+		}
+	</style>
+</head>
+<body>
+
+<nav class="menu">
+	<ul>
+		<li><a href="#">Фильмы</a>
+			<ul>
+				<li><a href="#">Экшн</a></li>
+				<li><a href="#">Мелодрамы</a></li>
+				<li><a href="#">Сериалы</a></li>
+				<li><a href="#">Семейные</a></li>
+			</ul>
+		</li>
+		<li><a href="#">Музыка</a>
+			<ul>
+				<li><a href="#">Классика</a></li>
+				<li><a href="#">Джаз</a></li>
+				<li><a href="#">Рок</a></li>
+				<li><a href="#">Грандж</a></li>
+			</ul>
+		</li>
+		<li><a href="#">Софт</a>
+			<ul>
+				<li><a href="#">Графика</a></li>
+				<li><a href="#">3D-моделирование</a></li>
+				<li><a href="#">Машинопись</a></li>
+				<li><a href="#">Переводчики</a></li>
+			</ul>
+		</li>
+		<li><a href="#">Игры</a>
+			<ul>
+				<li><a href="#">РПГ</a></li>
+				<li><a href="#">Шутеры</a></li>
+				<li><a href="#">Пасьянсы</a></li>
+			</ul>
+		</li>
+	</ul>
+</nav>
+
+</body>
+</html>
