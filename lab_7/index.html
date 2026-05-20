@@ -47,6 +47,120 @@
       margin-left: 1em;
     }
 
+    /* ===== СТИЛИ ДЛЯ БЛОКА СПОСОБНОСТЕЙ ===== */
+    .abilities-wrapper {
+      padding: 20px 0;
+    }
+    .agent-abilities {
+      background: #1e2a22;
+      border-radius: 28px;
+      padding: 25px;
+      margin-bottom: 40px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    }
+    .agent-abilities h3 {
+      color: #8eb974;
+      font-size: 28px;
+      margin-top: 0;
+      margin-bottom: 5px;
+    }
+    .agent-abilities h3 small {
+      color: #a0c8a0;
+      font-size: 16px;
+    }
+    .agent-divider {
+      height: 3px;
+      background: linear-gradient(90deg, #8eb974, transparent);
+      width: 100%;
+      margin: 15px 0 25px 0;
+    }
+    .ability-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .ability-card {
+      background: #25382b;
+      border-radius: 20px;
+      padding: 18px;
+      transition: all 0.2s ease;
+      border: 1px solid rgba(142, 185, 116, 0.3);
+    }
+    .ability-card:hover {
+      transform: translateY(-5px);
+      border-color: #8eb974;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+    .ability-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+    }
+    .ability-icon {
+      font-size: 28px;
+      font-weight: bold;
+      background: #1e2a22;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      color: #8eb974;
+      border: 1px solid #8eb974;
+    }
+    .ability-name {
+      font-size: 18px;
+      font-weight: bold;
+      color: #eef2ff;
+      margin: 0;
+    }
+    .ability-cost {
+      margin-left: auto;
+      background: #1a2a1f;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: bold;
+      color: #8eb974;
+    }
+    .ability-desc {
+      font-size: 13px;
+      color: #c8e0c8;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+    .ability-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+      font-size: 11px;
+    }
+    .stat {
+      background: #1a2a1f;
+      padding: 3px 8px;
+      border-radius: 15px;
+      color: #a0c8a0;
+    }
+    .ultimate-tag {
+      color: #ffaa44;
+      font-weight: bold;
+    }
+    @media (max-width: 992px) {
+      .ability-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+    }
+    @media (max-width: 576px) {
+      .ability-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     .tip-card {
       display: flex;
       flex-direction: row;
@@ -184,7 +298,6 @@
     .fa-leaf, .fa-eye, .fa-microchip {
       color: #8eb974;
     }
-    /* фон для секции методов */
     .method-bg {
       background: #1e2a22;
       border-radius: 28px;
@@ -219,12 +332,13 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Главная</a></li>
         <li><a href="#specialist">Три зачинщика</a></li>
-        <li><a href="#method">Описание способностей</a></li>
-        <li><a href="#fitback">Советы по игре</a></li>
+        <li><a href="#abilities">Способности</a></li>
+        <li><a href="#method">Тактики</a></li>
+        <li><a href="#fitback">Советы</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#" style="padding-top:8px; padding-bottom:8px;">
-          <span class="btn btn-primary-custom"><strong>⚡ Изучить мету инициаторов</strong></span></a>
+          <span class="btn btn-primary-custom"><strong>⚡ Изучить мету</strong></span></a>
         </li>
       </ul>
     </div>
@@ -235,17 +349,17 @@
     <div id="bannertext" style="position:absolute; top:12%; width:100%; text-align:center; color:white;">
       <div class="hidden-xs">
         <h1 style="font-size: 3.2rem;">🎯 SKYE · FADE · TEJO<br>
-          <small style="color: #cafff0;">Мастера разведки, страха и подавления — настоящие зачинщики атаки</small>
+          <small style="color: #cafff0;">Мастера разведки, страха и подавления</small>
         </h1>
       </div>
       <div class="hidden-sm hidden-md hidden-lg">
-        <p class="lead" style="font-weight: bold;">Инициаторы нового поколения: контроль и информация</p>
+        <p class="lead" style="font-weight: bold;">Инициаторы нового поколения</p>
       </div>
-      <a class="btn btn-danger btn-lg">🐺 Выбрать своего зачинщика</a>
+      <a class="btn btn-danger btn-lg">🐺 Выбрать зачинщика</a>
     </div>
   </div>
 
-  <!-- Блок: ТРИ ЗАЧИНЩИКА - SKYE | FADE | TEJO -->
+  <!-- Блок: ТРИ ЗАЧИНЩИКА -->
   <div id="specialist">
     <div class="row" style="text-align:center;">
       <h2>⚡ Код:Инициатор ⚡</h2>
@@ -254,44 +368,197 @@
       <div class="col-md-4">
         <img src="pict/Skye_ID_Card_Large.png" alt="Skye">
         <h3>🌿 SKYE — ПОВЕЛИТЕЛЬНИЦА ФЛОРЫ</h3>
-        <p>Скай, уроженка Австралии, и ее звериная банда прокладывают путь через враждебную территорию. Благодаря ее творениям, мешающим врагам, и способности исцелять других, команда под предводительством Скай сильнее и в большей безопасности.
-— Официальное описание</p>
+        <p>Скай, уроженка Австралии, и ее звериная банда прокладывают путь через враждебную территорию. Благодаря ее творениям, мешающим врагам, и способности исцелять других, команда под предводительством Скай сильнее и в большей безопасности.</p>
       </div>
       <div class="col-md-4">
         <img src="pict/Fade_ID_Card_Large.png" alt="Fade">
         <h3>🐺 FADE — ОХОТНИЦА ЗА СТРАХОМ</h3>
-        <p>Турецкая охотница за головами Фейд высвобождает силу первобытного кошмара, чтобы выведать вражеские секреты. Настроившись на саму суть ужаса, она выслеживает цели и раскрывает их самые сокровенные страхи, прежде чем сокрушить их во тьме.
-— Официальное описание</p>
+        <p>Турецкая охотница за головами Фейд высвобождает силу первобытного кошмара, чтобы выведать вражеские секреты. Настроившись на саму суть ужаса, она выслеживает цели и раскрывает их самые сокровенные страхи, прежде чем сокрушить их во тьме.</p>
       </div>
       <div class="col-md-4">
         <img src="pict/Tejo_ID_Card_Large.png" alt="Tejo">
         <h3>💥 TEJO — ИНЖЕНЕР ХАОСА</h3>
-        <p>Ветеран разведывательных операций из Колумбии, Техо, с помощью своей системы баллистического наведения вынуждает противника отступать — или лишает его жизни. Его точечные удары лишают противников равновесия и заставляют их плясать под его дудку.
-— Официальное описание</p>
+        <p>Ветеран разведывательных операций из Колумбии, Техо, с помощью своей системы баллистического наведения вынуждает противника отступать — или лишает его жизни. Его точечные удары лишают противников равновесия и заставляют их плясать под его дудку.</p>
       </div>
     </div>
-    
-    <div class="row" style="text-align:center; margin-top: 25px; padding: 0 15px;">
-      <div class="col-sm-4">
-        <i class="fa fa-leaf fa-3x"></i>
-        <h4>The Great Reclaimer</h4>
-        <p>Хотя Скай говорила, что до прихода в VALORANT не привыкла работать с другими людьми, она быстро показала себя как настоящий командный игрок, направляя свою команду и напоминая ей о необходимости действовать как единое целое и работать сообща для выполнения миссии. Благодаря своей способности чувствовать природу и все, что ее окружает, Скай от природы наблюдательна и быстро замечает все необычное в своем окружении.
+  </div>
 
-Скай, выросшая на ферме и привыкшая к тяжелому труду, похоже, хочет, чтобы ее товарищи по команде были такими же. Судя по всему, она проводит занятия по столярному делу рядом со столовой в их штаб-квартире, чтобы развивать смекалку с помощью ловких рук. Тех, кого она застает за бездельем, она заставляет присоединиться к ее утренней пробежке, которая начинается в 4 утра.</p>
+  <!-- ===== БЛОК СПОСОБНОСТЕЙ ===== -->
+  <div id="abilities" class="abilities-wrapper">
+    <div class="row" style="text-align:center;">
+      <h2>🔮 Арсенал инициаторов</h2>
+      <p class="lead">Способности Skye, Fade и Tejo — от базовых до ультимейтов</p>
+      <hr>
+    </div>
+
+    <!-- SKYE способности -->
+    <div class="agent-abilities">
+      <h3>🌿 SKYE <small>Повелительница флоры</small></h3>
+      <div class="agent-divider"></div>
+      <div class="ability-grid">
+        <div class="ability-card">
+          <div class="ability-header">
+            <div class="ability-icon"><i class="fa fa-heartbeat"></i></div>
+            <div class="ability-name">Отрастание</div>
+            <div class="ability-cost">150 💰</div>
+          </div>
+          <div class="ability-desc">Надеть целебную безделушку. Удерживайте кнопку огонь, чтобы исцелить союзников в радиусе действия и в зоне видимости. Можно использовать повторно, пока не закончится запас исцеления. Скай не может исцелять себя.</div>
+          <div class="ability-stats">
+            <span class="stat">100 ед. здоровья</span>
+            <span class="stat">20 ед./сек</span>
+          </div>
+        </div>
+        <div class="ability-card">
+          <div class="ability-header">
+            <div class="ability-icon"><i class="fa fa-paw"></i></div>
+            <div class="ability-name">Первопроходец</div>
+            <div class="ability-cost">300 💰</div>
+          </div>
+          <div class="ability-desc">Надеть брелок с тасманийским тигром. Нажмите, чтобы призвать хищника и взять его под контроль. Находясь под контролем, нажмите, чтобы прыгнуть вперед и взорваться с отрясающим взрывом, нанося урон противникам в зоне поражения.</div>
+          <div class="ability-stats">
+            <span class="stat">80 ед. урона</span>
+            <span class="stat">30 при прямом контакте</span>
+            <span class="stat">2.5-4с оглушения</span>
+          </div>
+        </div>
+        <div class="ability-card">
+          <div class="ability-header">
+            <div class="ability-icon"><i class="fa fa-sun-o"></i></div>
+            <div class="ability-name">Путеводный свет</div>
+            <div class="ability-cost">250 💰</div>
+          </div>
+          <div class="ability-desc">Надеть брелок с ястребом. Нажать, чтобы отправить его вперед. Удерживать нажатие, чтобы направить ястреба в сторону прицела. Повторно нажать, пока ястреб в полете, чтобы превратить его в вспышку.</div>
+          <div class="ability-stats">
+            <span class="stat">1-2.25с вспышка</span>
+            <span class="stat">60с перезарядка</span>
+          </div>
+        </div>
+        <div class="ability-card">
+          <div class="ability-header">
+            <div class="ability-icon"><i class="fa fa-star"></i></div>
+            <div class="ability-name">Искатели</div>
+            <div class="ability-cost ultimate-tag">★ ULT ★ 8 очков</div>
+          </div>
+          <div class="ability-desc">Надеть амулет «Искатель». Нажмите, чтобы отправить ястребик в цель. Если «Искатель» достигает цели, он приближается к ней и замедляет ее. Враги могут уничтожить «Искателей».</div>
+          <div class="ability-stats">
+            <span class="stat">3с близорукость</span>
+            <span class="stat">5с замедление 60%</span>
+            <span class="stat">120 ед. здоровья цели</span>
+          </div>
+        </div>
       </div>
-      <div class="col-sm-4">
-        <i class="fa fa-eye fa-3x"></i>
-        <h4>BountyHunter</h4>
-        <p>Поначалу может показаться, что Фэйд сурова, но у нее есть чувство юмора, и когда она говорит что-то с невозмутимым видом, это часто сопровождается остроумной шуткой. Работа в команде может казаться ей обузой, и она часто ведет себя так, будто ей все равно, даже когда ее оживляют. Кажется, она немного гордится своими способностями Сияющей и теми огромными преимуществами, которые они дают ей (и ее команде) в бою, и отмечает, что не все агенты такие, какими кажутся, например Рейна и Вайпер.
+    </div>
 
-Она не стесняется признавать, что ее впечатляют некоторые агенты, и активно подбадривает их, когда они хорошо справляются, чтобы обеспечить слаженную работу команды. Можно даже сказать, что она хочет наладить отношения с агентами и обсудить, что они могут сделать вместе. Она не хочет враждовать с теми, с кем ей предстоит работать, пока она не приблизится к «нему».
-
-Фейд, похоже, жалеет свое отражение в зеркале, говоря, что «слишком много повидала», намекая на то, что Фейд, возможно, ненавидит свои способности. Видеть душевные травмы других людей может быть полезно на поле боя, но, похоже, это причиняет ей душевные страдания. Возможно, это «цена за общение с Кошмаром» — она даже говорит, что «готова на все, лишь бы не спать».</p>
+    <!-- FADE способности -->
+    <div class="agent-abilities">
+      <h3>🐺 FADE <small>Охотница за страхом</small></h3>
+      <div class="agent-divider"></div>
+      <div class="ability-grid">
+        <div class="ability-card">
+          <div class="ability-header">
+            <div class="ability-icon"><i class="fa fa-eye"></i></div>
+            <div class="ability-name">Ночной дар</div>
+            <div class="ability-cost">FREE 🎯</div>
+          </div>
+          <div class="ability-desc">Снарядите глаз страха. Нажмите, чтобы отправить его вперед. При попадании глаз раскрывается, отмечая врагов и оставляя следы их шагов.</div>
+          <div class="ability-stats">
+            <span class="stat">Отметка 3с</span>
+            <span class="stat">Следы шагов 12с</span>
+          </div>
+        </div>
+        <div class="ability-card">
+          <div class="ability-header">
+            <div class="ability-icon"><i class="fa fa-chain-broken"></i></div>
+            <div class="ability-name">Скованность страхом</div>
+            <div class="ability-cost">200 💰</div>
+          </div>
+          <div class="ability-desc">Снарядите сферу страха. Нажмите, чтобы бросить сферу, которая через мгновение падает на землю. При приземлении сфера взрывается, замедляя врагов и применяя к ним эффект «Страх».</div>
+          <div class="ability-stats">
+            <span class="stat">Замедление 50%</span>
+            <span class="stat">4с длительность</span>
+          </div>
+        </div>
+        <div class="ability-card">
+          <div class="ability-header">
+            <div class="ability-icon"><i class="fa fa-bolt"></i></div>
+            <div class="ability-name">Пожиратель страха</div>
+            <div class="ability-cost">250 💰</div>
+          </div>
+          <div class="ability-desc">Снарядите Пожирателя страха. Нажмите, чтобы отправить его к цели. Пожиратель преследует отмеченных врагов, оглушая их при контакте.</div>
+          <div class="ability-stats">
+            <span class="stat">Оглушение 3с</span>
+            <span class="stat">Автоматическое наведение</span>
+          </div>
+        </div>
+        <div class="ability-card">
+          <div class="ability-header">
+            <div class="ability-icon"><i class="fa fa-moon-o"></i></div>
+            <div class="ability-name">Ночь страха</div>
+            <div class="ability-cost ultimate-tag">★ ULT ★ 8 очков</div>
+          </div>
+          <div class="ability-desc">Волна страха пронзает стены, отмечая всех противников и оставляя следы их шагов. Враги в зоне поражения также получают эффект «Страх» и оглушение.</div>
+          <div class="ability-stats">
+            <span class="stat">Отметка всех врагов</span>
+            <span class="stat">Следы шагов 12с</span>
+            <span class="stat">Оглушение 2с</span>
+          </div>
+        </div>
       </div>
-      <div class="col-sm-4">
-        <i class="fa fa-microchip fa-3x"></i>
-        <h4>Cashew</h4>
-        <p>Техо — опытный профессионал, который подходит к делу без лишних сантиментов. Он уверен в себе, стратегически мыслит в бою и обладает богатым опытом. Он прямолинеен, требует компетентности и относится к конфликтам как к профессии, где ошибки приводят к жертвам. Он понимает, что убивать необходимо, но не зацикливается на этом, а концентрируется на правильном выполнении задачи и на том, чтобы все члены команды остались живы. Известно, что Техо организует бои для своей команды, используя свои знания в области тактики и взрывчатых веществ, и требует, чтобы они действовали без промедления. Кроме того, Техо обладает спокойной властностью, подкрепляет все свои слова опытом и держит своих подчиненных в тонусе, сочетая силу характера с долей здорового юмора, чтобы его коллеги сохраняли самообладание в стрессовых ситуациях.</p>
+    </div>
+
+    <!-- TEJO способности -->
+    <div class="agent-abilities">
+      <h3>💥 TEJO <small>Инженер хаоса</small></h3>
+      <div class="agent-divider"></div>
+      <div class="ability-grid">
+        <div class="ability-card">
+          <div class="ability-header">
+            <div class="ability-icon"><i class="fa fa-drone"></i></div>
+            <div class="ability-name">Стелс-дрон</div>
+            <div class="ability-cost">FREE 🎯</div>
+          </div>
+          <div class="ability-desc">Запустите невидимый дрон-разведчик. Дрон видит тепловые следы врагов через стены и отмечает их для команды.</div>
+          <div class="ability-stats">
+            <span class="stat">Невидим для врагов</span>
+            <span class="stat">Отметка 5с</span>
+          </div>
+        </div>
+        <div class="ability-card">
+          <div class="ability-header">
+            <div class="ability-icon"><i class="fa fa-microchip"></i></div>
+            <div class="ability-name">ЭМИ-сфера</div>
+            <div class="ability-cost">300 💰</div>
+          </div>
+          <div class="ability-desc">Создаёт зону электромагнитного импульса, которая отключает все способности врагов в радиусе действия на 8 секунд.</div>
+          <div class="ability-stats">
+            <span class="stat">Отключение способностей 8с</span>
+            <span class="stat">Радиус 10м</span>
+          </div>
+        </div>
+        <div class="ability-card">
+          <div class="ability-header">
+            <div class="ability-icon"><i class="fa fa-bomb"></i></div>
+            <div class="ability-name">Спецдоставка</div>
+            <div class="ability-cost">250 💰</div>
+          </div>
+          <div class="ability-desc">Специальные гранаты с дистанционным подрывом. Можно рикошетить от стен. Наносят урон и ослепляют врагов.</div>
+          <div class="ability-stats">
+            <span class="stat">75 ед. урона</span>
+            <span class="stat">Ослепление 2с</span>
+          </div>
+        </div>
+        <div class="ability-card">
+          <div class="ability-header">
+            <div class="ability-icon"><i class="fa fa-empire"></i></div>
+            <div class="ability-name">Армейский контракт</div>
+            <div class="ability-cost ultimate-tag">★ ULT ★ 9 очков</div>
+          </div>
+          <div class="ability-desc">Наносит массированный удар по выбранной зоне, уничтожая все постройки и способности врагов на площади.</div>
+          <div class="ability-stats">
+            <span class="stat">Уничтожает утилиты врага</span>
+            <span class="stat">150 ед. урона по площади</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -299,8 +566,8 @@
   <!-- Блок МЕТОДЫ / Тактики -->
   <div id="method">
     <div class="row" style="text-align:center; background:#1e2a22; border-radius: 28px;">
-      <h2>📡 Как зачинщики запускают атаку</h2>
-      <p class="lead">Пошаговые протоколы инициации — от разведки до пост-плэнта</p>
+      <h2>🧭 Чек-лист инициатора</h2>
+      <p class="lead">Как работают способности Skye, Fade и Tejo</p>
       <hr>
 
       <ul class="method-list clearfix">
@@ -308,7 +575,7 @@
           <img src="pict/We_Can_Do_It_Spray.png" class="img-responsive" alt="Skye разведка">
         </li>
         <li class="list1_desc">
-          <h3>Шаг 1. «Флора в бою» — разведка от Skye</h3>
+          <h3>🌿 «Флора в бою» — разведка от Skye</h3>
           <p>Перед заходом на точку Skye запускает Тасу по ключевым углам. Если зверь «чует» врага — команда получает точный пинг + ослепление. Одновременно птичка-ослепитель сбивает прицелы врагам. Skye мгновенно даёт тиммейтам зелёный свет на энтри.</p>
         </li>
       </ul>
@@ -318,7 +585,7 @@
           <img src="pict/Ordinance_Request_Spray.png" class="img-responsive" alt="Fade ульт">
         </li>
         <li class="list1_desc">
-          <h3>Шаг 2. «Кошмарный старт» — давление Fade</h3>
+          <h3>🐺 «Кошмарный старт» — давление Fade</h3>
           <p>Fade кидает «Призрачный глаз» в сторону пиков — он двигается к отмеченному врагу, оглушая его. Ульт «Ночь страха» пронзает стены, отмечает противников и оставляет следы шагов. Команда видит врагов как на ладони.</p>
         </li>
       </ul>
@@ -328,7 +595,7 @@
           <img src="pict/Doomscrolling_Spray.png" class="img-responsive" alt="Tejo подавление">
         </li>
         <li class="list1_desc">
-          <h3>Шаг 3. «Глушитель утилит» — тактика Tejo</h3>
+          <h3>💥 «Глушитель утилит» — тактика Tejo</h3>
           <p>Tejo запускает дрон-Stealth Wing над точкой. Зона ЭМИ подавляет все способности на 8 секунд. Cypher не ставит ловушки, Killjoy не включит турель. Tejo — король вступительных фаз.</p>
         </li>
       </ul>
@@ -338,21 +605,20 @@
           <img src="pict/Brioche_Card_Wide.png" class="img-responsive" alt="Постплэнт">
         </li>
         <li class="list1_desc">
-          <h3>Шаг 4. «Синергия зачинщиков в пост-плэнте»</h3>
+          <h3>🤝 «Синергия зачинщиков» — пост-плэнт</h3>
           <p>Skye исцеляет союзников, Fade держит «Пожирателя» на подходе, Tejo закидывает подавляющие сферы. Три инициатора создают непробиваемую стену.</p>
         </li>
       </ul>
     </div>
   </div>
 
-  <!-- Блок СОВЕТЫ ПО ИГРЕ — увеличенные картинки, без обводки -->
+  <!-- Блок СОВЕТЫ ПО ИГРЕ -->
   <div id="fitback">
     <div class="row" style="text-align:center; background:#8eb974; color:#0a0c15; border-radius: 30px 30px 0 0; padding-bottom: 20px;">
       <h2>🎮 Советы по игре за зачинщиков</h2>
       <hr style="background: #0a0c15;">
       <p class="lead" style="color:#1a3a1a;">Как выжать максимум из Skye, Fade и Tejo</p>
 
-      <!-- Совет #1: Skye с большой вертикальной картинкой (без обводки) -->
       <div class="tip-card">
         <div class="tip-card-image">
           <img src="pict/Skye_Artwork_Full.png" alt="Skye full art">
@@ -360,13 +626,12 @@
         <div class="tip-card-content">
           <h3>🌿 СОВЕТ ДЛЯ SKYE</h3>
           <div class="tip-title">💡 Используй Тасу для безопасной разведки</div>
-          <p>Твой тигр (Тасу) не только ослепляет врага, но и даёт звуковой сигнал при обнаружении. Запускай его перед входом на точку — если тигр «чихнул» и побежал, значит, там есть враг. Не экономь на разведке: информация стоит дороже любой способности. Также помни, что птичку-ослепитель можно контролировать в полёте — наводи её прямо в лицо оппоненту через угол.</p>
+          <p>Твой тигр (Тасу) не только ослепляет врага, но и даёт звуковой сигнал при обнаружении. Запускай его перед входом на точку — если тигр «чихнул» и побежал, значит, там есть враг. Не экономь на разведке: информация стоит дороже любой способности.</p>
           <div class="tip-title">🔥 Лайфхак</div>
-          <p>Исцеление (Regrowth) работает по области, но прерывается при получении урона. Прячься за укрытие, пока лечишь тиммейтов — так ты не потеряешь концентрацию.</p>
+          <p>Исцеление работает по области, но прерывается при получении урона. Прячься за укрытие, пока лечишь тиммейтов.</p>
         </div>
       </div>
 
-      <!-- Совет #2: Fade -->
       <div class="tip-card">
         <div class="tip-card-image">
           <img src="pict/Fade_Artwork_Full.png" alt="Fade full art">
@@ -374,13 +639,12 @@
         <div class="tip-card-content">
           <h3>🐺 СОВЕТ ДЛЯ FADE</h3>
           <div class="tip-title">💡 Террор — твой главный союзник</div>
-          <p>Призрачный глаз (Prowler) двигается к последнему отмеченному врагу. Поэтому перед его запуском обязательно кинь «Ночной дар» (Haunt) — он отметит врагов даже сквозь стены. Тогда Prowler сам найдёт цель и оглушит её. Это идеальная связка для зачистки углов. Кроме того, ульт «Ночь страха» оставляет следы шагов на 12 секунд — используй его, когда враги пытаются перегруппироваться.</p>
+          <p>Призрачный глаз двигается к последнему отмеченному врагу. Перед запуском обязательно кинь «Ночной дар» — он отметит врагов даже сквозь стены.</p>
           <div class="tip-title">🔥 Лайфхак</div>
-          <p>Твои сферы страха (Seize) блокируют не только передвижение, но и способности. Кидай их в чокпоинты (узкие проходы), чтобы запереть врагов в ловушку.</p>
+          <p>Сферы страха блокируют не только передвижение, но и способности. Кидай их в узкие проходы.</p>
         </div>
       </div>
 
-      <!-- Совет #3: Tejo -->
       <div class="tip-card">
         <div class="tip-card-image">
           <img src="pict/Tejo_Artwork_Full.png" alt="Tejo full art">
@@ -388,13 +652,12 @@
         <div class="tip-card-content">
           <h3>💥 СОВЕТ ДЛЯ TEJO</h3>
           <div class="tip-title">💡 Подавление — ключ к победе</div>
-          <p>Твоя ЭМИ-сфера отключает способности врага на 8 секунд. Запускай её перед заходом на точку — Киллиджой лишится турели, Сайфер — ловушек, а Випер не сможет активировать дым. Без утилит враги становятся просто мишенями. Также используй дрон Stealth Wing для разведки: он невидим для врагов, но видит их тепловые следы.</p>
+          <p>ЭМИ-сфера отключает способности врага на 8 секунд. Запускай её перед заходом на точку — Киллиджой лишится турели, Сайфер — ловушек.</p>
           <div class="tip-title">🔥 Лайфхак</div>
-          <p>Постилль специальных гранат Special Delivery можно рикошетить от стен. Тренируй углы — так ты будешь доставать врагов за укрытиями, даже не видя их.</p>
+          <p>Специальные гранаты можно рикошетить от стен. Тренируй углы.</p>
         </div>
       </div>
 
-      <!-- Совет #4: Общий -->
       <div class="tip-card">
         <div class="tip-card-image">
           <img src="pict/Brioche_Spray.gif" alt="Team tip">
@@ -402,9 +665,9 @@
         <div class="tip-card-content">
           <h3>🤝 ОБЩИЙ СОВЕТ: КОМАНДНАЯ ИГРА</h3>
           <div class="tip-title">💡 Синхронизация с дуэлянтами</div>
-          <p>Зачинщик не должен играть в одиночку. Всегда координируй свои действия с Джетт, Рейной или Фениксом. Перед тем как запустить ослепление/разведку, скажи в голосовой чат: «Вхожу через 3, 2, 1 — лови флешку». Тогда дуэлянт сразу зайдет на добивание. Также не забывай про ретроспективу: после смерти давай команде точные координаты врага.</p>
+          <p>Зачинщик не должен играть в одиночку. Всегда координируй свои действия с Джетт, Рейной или Фениксом. Перед запуском ослепления скажи в голосовой чат: «Вхожу через 3, 2, 1 — лови флешку».</p>
           <div class="tip-title">🔥 Лайфхак</div>
-          <p>Всегда имей план Б. Если первый заход провалился, быстро меняйте точку атаки — инициаторы дают информацию для быстрого ротейта.</p>
+          <p>Всегда имей план Б. Если первый заход провалился, быстро меняйте точку атаки.</p>
         </div>
       </div>
     </div>
