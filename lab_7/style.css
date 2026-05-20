@@ -1,0 +1,47 @@
+/* ===== ТВОИ НОВЫЕ СТИЛИ ===== */
+.logo-img {
+  height: 60px;
+}
+
+.service-img, .step-img, .portfolio-img { 
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.portfolio-large {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+
+.service-img-large {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  aspect-ratio: 800 / 450;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.footer {
+  background: #111;
+  color: #ccc;
+}
+
+#about p {
+  text-align: justify;
+}
+
+.btn-mustard {
+  background-color: #c79821;
+  border-color: #c79821;
+  color: #fff;
+}
+.btn-mustard:hover {
+  background-color: #a87c1a;
+  border-color: #a87c1a;
+  color: #fff;
+}

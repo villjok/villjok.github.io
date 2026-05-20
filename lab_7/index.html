@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <link rel="icon" type="image/x-icon" href="initiatorfavi.ico">
+  <meta charset="utf-8">
+  <title>Valorant | Зачинщики: Skye · Fade · Tejo — Мастера инициации</title>
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      background: #0a0c15;
+      color: #eef2ff;
+      font-family: 'Segoe UI', 'Poppins', system-ui, sans-serif;
+    }
+    .container {
+      background: #0e111b;
+      box-shadow: 0 0 35px rgba(0,0,0,0.6);
+      border-radius: 0 0 20px 20px;
+    }
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    .method-list, .feedback-list {
+      list-style: none;
+      margin: 15px;
+      padding: 10px;
+      box-shadow: 0 0 12px rgba(80, 180, 200, 0.4);
+      background: #141a28;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: 0.2s;
+    }
+    .method-list:hover, .feedback-list:hover {
+      transform: scale(1.01);
+      box-shadow: 0 0 18px #50b4c8;
+    }
+    .method-list .list1_img, .feedback-list .list1_img {
+      float: left;
+      width: 36%;
+    }
+    .method-list .list1_desc, .feedback-list .list1_desc {
+      float: left;
+      width: 61%;
+      margin-left: 1em;
+    }
+    .feedback-list .list1_img {
+      width: 14%;
+    }
+    .feedback-list .list1_desc {
+      width: 80%;
+      text-align: left;
+      margin-left: 20px;
+    }
+    @media (max-width: 768px) {
+      .method-list .list1_img, .method-list .list1_desc,
+      .feedback-list .list1_img, .feedback-list .list1_desc {
+        width: 100%;
+        margin-left: 0;
+        text-align: center;
+      }
+    }
+    .navbar-default {
+      background: #0f131f;
+      border: none;
+      border-bottom: 2px solid #56c8d4;
+    }
+    .navbar-default .navbar-nav > li > a {
+      color: #f0f3fa;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+    .navbar-default .navbar-nav > li.active > a,
+    .navbar-default .navbar-nav > li > a:hover {
+      color: #56c8d4;
+      background: #1a212f;
+    }
+    .btn-primary-custom {
+      background-color: #56c8d4;
+      border-color: #3aaab6;
+      color: #0a0c15;
+      font-weight: bold;
+      border-radius: 30px;
+      padding: 8px 20px;
+    }
+    .btn-primary-custom:hover {
+      background-color: #3aaab6;
+      color: white;
+    }
+    .btn-danger, .btn-danger:hover {
+      background-color: #c84e5e;
+      border-color: #b03a4a;
+      font-weight: bold;
+    }
+    h1, h2, h3 {
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+    h2 {
+      color: #56c8d4;
+      text-transform: uppercase;
+      margin-top: 20px;
+    }
+    hr {
+      border-top: 2px solid #56c8d4;
+      width: 80px;
+    }
+    #specialist .col-md-4 img, .specialist-second img {
+      border-radius: 50%;
+      border: 3px solid #56c8d4;
+      object-fit: cover;
+      width: 160px;
+      height: 160px;
+    }
+    .bg-soft-dark {
+      background: #0f1422;
+    }
+    footer div {
+      background: #080c14;
+      border-top: 1px solid #56c8d4;
+    }
+    .lead {
+      color: #b9c2f0;
+    }
+    .badge-initiator {
+      background: #56c8d4;
+      color: #0a0c15;
+      padding: 4px 12px;
+      border-radius: 40px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    #bannertext {
+      text-shadow: 2px 2px 0 #0a0f1a;
+      background: rgba(0,0,0,0.35);
+      border-radius: 20px;
+      display: inline-block;
+      padding: 10px 20px;
+      backdrop-filter: blur(3px);
+    }
+    /* дополнительный стиль для мерцания иконок отзывов */
+    .feedback-list .list1_img img {
+      border-radius: 50%;
+      object-fit: cover;
+      width: 70px;
+      height: 70px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <header style="padding-top:5px;">
+    <div id="logo" style="float:left">
+      <!-- Логотип: используется класс-символ инициатора -->
+      <img src="InitiatorClassSymbol.png" alt="Initiator Logo" style="height: 48px; width: auto;">
+      <span style="font-weight: bold; font-size: 1.5rem; margin-left: 8px;">VALORANT<span style="color:#56c8d4;">//</span>INITIATOR</span>
+    </div>
+    <div id="contacts" style="float:right;">
+      <i class="fa fa-users fa-lg"></i> Отряд зачинщиков |
+      <i class="fa fa-headphones fa-lg"></i> discord.gg/skye-fade-tejo
+      <i class="fa fa-twitch fa-2x" style="margin-left:10px; color:#56c8d4;"></i>
+    </div>
+    <div class="clearfix"></div>
+  </header>
+
+  <nav class="navbar navbar-default navbar-static-top">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-menu">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-menu">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Главная</a></li>
+        <li><a href="#specialist">Три зачинщика</a></li>
+        <li><a href="#method">Тактики инициации</a></li>
+        <li><a href="#fitback">Отзывы агентов</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#" style="padding-top:8px; padding-bottom:8px;">
+          <span class="btn btn-primary-custom"><strong>⚡ Изучить мету инициаторов</strong></span></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div id="header-bottom" style="position:relative;">
+    <!-- Баннер: используем карту Be Mine Sova как широкий баннер -->
+    <img src="400px-Be_Mine_Sova_Card_Wide.png" style="width:100%; height: auto; object-fit: cover; max-height: 450px;" alt="Valorant Battle Banner">
+    <div id="bannertext" style="position:absolute; top:12%; width:100%; text-align:center; color:white;">
+      <div class="hidden-xs">
+        <h1 style="font-size: 3.2rem;">🎯 SKYE · FADE · TEJO<br>
+          <small style="color: #cafff0;">Мастера разведки, страха и подавления — настоящие зачинщики атаки</small>
+        </h1>
+      </div>
+      <div class="hidden-sm hidden-md hidden-lg">
+        <p class="lead" style="font-weight: bold;">Инициаторы нового поколения: контроль и информация</p>
+      </div>
+      <a class="btn btn-danger btn-lg">🐺 Выбрать своего зачинщика</a>
+    </div>
+  </div>
+
+  <!-- Блок: ТРИ ЗАЧИНЩИКА - SKYE | FADE | TEJO -->
+  <div id="specialist">
+    <div class="row" style="text-align:center;">
+      <h2>⭐ Три столпа инициации ⭐</h2>
+      <p class="lead">Skye · Fade · Tejo — как они начинают раунд и ломают оборону врага</p>
+      <hr>
+      <div class="col-md-4">
+        <!-- Аватар Skye: Skye_ID_Card_Large.png -->
+        <img src="Skye_ID_Card_Large.png" alt="Skye">
+        <h3>🌿 SKYE — ПОВЕЛИТЕЛЬНИЦА ФЛОРЫ</h3>
+        <p>Австралийская инициаторша, которая исцеляет и разведывает одновременно. Её звери — Тасу и Флеш-птица — прощупывают позиции врага, ослепляют и дают безупречную информацию. Skye не просто начинает раунд — она заставляет врагов выходить из укрытий, а команду получать хил и контроль. Идеальный пик для агрессивного энтри с поддержкой тиммейтов.</p>
+      </div>
+      <div class="col-md-4">
+        <!-- Аватар Fade: Fade_ID_Card_Large.png -->
+        <img src="Fade_ID_Card_Large.png" alt="Fade">
+        <h3>🐺 FADE — ОХОТНИЦА ЗА СТРАХОМ</h3>
+        <p>Турецкий кошмар для вражеской команды. Её Пожиратель страха и Призрачные глаза проходят сквозь стены, отмечая цели и накладывая оглушение. Fade — истинный зачинщик: её ульт «Ночь страха» заставляет врагов разбегаться, слышать шаги в панике. Никто не собирает инфу лучше неё. Она не просто атакует — она охотится.</p>
+      </div>
+      <div class="col-md-4">
+        <!-- Аватар Tejo: Tejo_ID_Card_Large.png -->
+        <img src="Tejo_ID_Card_Large.png" alt="Tejo">
+        <h3>💥 TEJO — ИНЖЕНЕР ХАОСА</h3>
+        <p>Мастер подавления и дезориентации. Его специальная винтовка с зонными ЭМИ-снарядами отключает способности врагов, а дроны-разведчики висят над точкой, вынуждая защитников покидать удобные позиции. Tejo начинает перестрелку ещё до первого выстрела — враги уже оглушены и без утилит. Идеальный зачинщик для слаженной команды, которая любит методичные зачистки.</p>
+      </div>
+    </div>
+    
+    <!-- Дополнительная информация об уникальном стиле -->
+    <div class="row" style="text-align:center; margin-top: 25px; padding: 0 15px;">
+      <div class="col-sm-4">
+        <i class="fa fa-leaf fa-3x" style="color:#56c8d4;"></i>
+        <h4>Природа разведки (Skye)</h4>
+        <p>Тасу (тигр) вынюхивает врагов, а исцеление возвращает союзников в строй.</p>
+      </div>
+      <div class="col-sm-4">
+        <i class="fa fa-eye fa-3x" style="color:#c44f6e;"></i>
+        <h4>Кошмарный трекинг (Fade)</h4>
+        <p>Отмечает цели сквозь стены — враг не спрячется, каждый угол под контролем.</p>
+      </div>
+      <div class="col-sm-4">
+        <i class="fa fa-microchip fa-3x" style="color:#e0894e;"></i>
+        <h4>Техно-подавление (Tejo)</h4>
+        <p>Блокирует способности вражеских агентов и ломает любую установку.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Блок МЕТОДЫ / Тактики для SKYE, FADE, TEJO -->
+  <div id="method">
+    <div class="row" style="text-align:center; background:#0f1320; border-radius: 28px;">
+      <h2>📡 Как зачинщики (Skye, Fade, Tejo) запускают атаку</h2>
+      <p class="lead">Пошаговые протоколы инициации — от разведки до пост-плэнта</p>
+      <hr>
+
+      <ul class="method-list clearfix">
+        <li class="list1_img">
+          <!-- Иллюстрация шаг 1: используем Brioche_Card_Wide.png (широкая карта) -->
+          <img src="Brioche_Card_Wide.png" class="img-responsive" alt="Skye разведка">
+        </li>
+        <li class="list1_desc">
+          <h3>Шаг 1. «Флора в бою» — разведка от Skye</h3>
+          <p>Перед заходом на точку Skye запускает Тасу (разведывающего тигра) по ключевым углам. Если зверь «чует» врага — команда получает точный пинг + ослепление цели. Одновременно с этим птичка-ослепитель сбивает прицелы врагам. Skye мгновенно даёт тиммейтам зелёный свет на энтри. Зачинщик не просто врывается — он заставляет врагов паниковать и выбегать под обстрел.</p>
+        </li>
+      </ul>
+
+      <ul class="method-list clearfix">
+        <li class="list1_img">
+          <!-- Иллюстрация шаг 2: используем Ordinance_Request_Spray.png -->
+          <img src="Ordinance_Request_Spray.png" class="img-responsive" alt="Fade ульт">
+        </li>
+        <li class="list1_desc">
+          <h3>Шаг 2. «Кошмарный старт» — давление Fade</h3>
+          <p>Fade кидает «Призрачный глаз» (Prowler) в сторону пиков — он автоматически двигается к отмеченному врагу, оглушая его. А главная фишка: ульт «Ночь страха». Волна страха пронзает стены, отмечает всех противников, оставляет следы шагов. Команда видит врагов как на ладони, а зачинщики (Skye/Tejo) добивают беспомощные цели. Инициация превращается в кровавую охоту.</p>
+        </li>
+      </ul>
+
+      <ul class="method-list clearfix">
+        <li class="list1_img">
+          <!-- Иллюстрация шаг 3: используем Doomscrolling_Spray.png -->
+          <img src="Doomscrolling_Spray.png" class="img-responsive" alt="Tejo подавление">
+        </li>
+        <li class="list1_desc">
+          <h3>Шаг 3. «Глушитель утилит» — тактика Tejo</h3>
+          <p>Пока Skye и Fade собирают инфу, Tejo запускает дрон-Stealth Wing над точкой. Враг не видит дрон, но зона ЭМИ подавляет все способности на 8 секунд. Cypher не ставит ловушки, Killjoy не включит турель, а Viper не активирует дым. После подавления следует залп специальных гранат. Tejo — король вступительных фаз: враги становятся просто мишенями без скиллов. Зачинщик превращает оборону в руины.</p>
+        </li>
+      </ul>
+
+      <ul class="method-list clearfix">
+        <li class="list1_img">
+          <!-- Иллюстрация шаг 4: используем We_Can_Do_It_Spray.png -->
+          <img src="We_Can_Do_It_Spray.png" class="img-responsive" alt="Постплэнт">
+        </li>
+        <li class="list1_desc">
+          <h3>Шаг 4. «Синергия зачинщиков в пост-плэнте»</h3>
+          <p>После установки спайка Skye исцеляет союзников, Fade держит «Пожирателя» на подходе, а Tejo закидывает подавляющие сферы на точки входа врага. Три инициатора вместе создают непробиваемую стену: враг ослеплён, оглушён и лишён скиллов. В таком режиме даже 3 на 5 превращается в победу. Вот почему Skye, Fade и Tejo — идеальные зачинщики для любого состава.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ОТЗЫВЫ про Skye, Fade и Tejo (используем граффити-спреи как аватарки) -->
+  <div id="fitback">
+    <div class="row" style="text-align:center; background:#56c8d4; color:#0a0c15; border-radius: 30px 30px 0 0;">
+      <h2>🎙️ Отзывы комьюнити</h2>
+      <hr style="background: #0a0c15;">
+      <p class="lead">Что говорят игроки о лучших зачинщиках-инициаторах</p>
+
+      <ul class="feedback-list clearfix" style="background:#1a1f2d; color:#eee;">
+        <li class="list1_img">
+          <!-- Для разнообразия используем иконку из набора Brioche (или любую другую) — но лучше взять спрей -->
+          <img src="Ordinance_Request_Spray.png" class="img-responsive" style="border-radius: 50%; object-fit: cover;" alt="player1">
+        </li>
+        <li class="list1_desc">
+          <h3 style="margin:0; padding:0; line-height:1.4; color:#9efff0;">«Скай дала нам и хил, и полную инфу — мы зашли на точку как нож сквозь масло! Лучший зачинщик для новичков и профи!»</h3>
+          <p style="color:#bbccff;">— AstraEnjoyer, Diamond 2</p>
+        </li>
+      </ul>
+
+      <ul class="feedback-list clearfix" style="background:#1a1f2d; color:#eee;">
+        <li class="list1_img">
+          <img src="Doomscrolling_Spray.png" class="img-responsive" style="border-radius: 50%; object-fit: cover;" alt="player2">
+        </li>
+        <li class="list1_desc">
+          <h3 style="margin:0; padding:0; line-height:1.4; color:#9efff0;">«Fade на Ascent — это имба. Её ульт через две стены показал всех троих защитников, мы их просто перестреляли. Лучшая инициация в моей жизни!»</h3>
+          <p style="color:#bbccff;">— Jett_Main, Immortal 1</p>
+        </li>
+      </ul>
+
+      <ul class="feedback-list clearfix" style="background:#1a1f2d; color:#eee;">
+        <li class="list1_img">
+          <img src="We_Can_Do_It_Spray.png" class="img-responsive" style="border-radius: 50%; object-fit: cover;" alt="player3">
+        </li>
+        <li class="list1_desc">
+          <h3 style="margin:0; padding:0; line-height:1.4; color:#9efff0;">«Tejo — машина подавления. Мы заблокировали KJ и Cypher, у них вообще не работали ульты. Зачинщик, который решает исход до драки! Рекомендую всем пятеркам.»</h3>
+          <p style="color:#bbccff;">— ProInitiator, Radiant</p>
+        </li>
+      </ul>
+
+      <ul class="feedback-list clearfix" style="background:#1a1f2d; color:#eee;">
+        <li class="list1_img">
+          <img src="Brioche_Card_Wide.png" class="img-responsive" style="border-radius: 50%; object-fit: cover;" alt="player4">
+        </li>
+        <li class="list1_desc">
+          <h3 style="margin:0; padding:0; line-height:1.4; color:#9efff0;">«Связка Skye + Fade + Tejo — это нечто невероятное. Враги слепые, оглушённые, без способностей. Мы выиграли 13-2, спасибо гайдам!»</h3>
+          <p style="color:#bbccff;">— Omen_Flex, Platinum 3</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div style="text-align:right; background:#080c14; padding:1.2em; color: #b4f0ff;">
+    <i class="fa fa-pagelines"></i> VALORANT // Инициация — Skye · Fade · Tejo <br>
+    Академия зачинщиков | 2025-2026 | Начинай и доминируй
+  </div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $('a[href^="#"]').on('click', function(event) {
+      var target = $(this.getAttribute('href'));
+      if( target.length ) {
+        event.preventDefault();
+        $('html, body').stop().animate({
+          scrollTop: target.offset().top - 70
+        }, 600);
+      }
+    });
+  });
+</script>
+</body>
+</html>
