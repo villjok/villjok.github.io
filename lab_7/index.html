@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <link rel="icon" type="image/x-icon" href="pict/ValoIcon.ico">
+  <link rel="icon" type="image/x-icon" href="pict/initiatorfavi.ico">
   <meta charset="utf-8">
   <title>Valorant | Зачинщики: Skye · Fade · Tejo — Мастера инициации</title>
   <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -46,19 +46,66 @@
       width: 61%;
       margin-left: 1em;
     }
-    .feedback-list .list1_img {
-      width: 20%;
+    /* Новый стиль для советов — картинка сверху, текст снизу (для вертикальных артов) */
+    .tip-card {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 25px;
+      margin: 20px 15px;
+      padding: 20px;
+      background: #141a28;
+      border-radius: 24px;
+      box-shadow: 0 0 12px rgba(142, 185, 116, 0.3);
+      transition: 0.2s;
     }
-    .feedback-list .list1_desc {
-      width: 75%;
+    .tip-card:hover {
+      transform: scale(1.01);
+      box-shadow: 0 0 18px #8eb974;
+    }
+    .tip-card-image {
+      flex: 0 0 180px;
+      text-align: center;
+    }
+    .tip-card-image img {
+      width: 100%;
+      max-width: 180px;
+      height: auto;
+      border-radius: 16px;
+      border: 3px solid #8eb974;
+      object-fit: cover;
+    }
+    .tip-card-content {
+      flex: 1;
       text-align: left;
-      margin-left: 20px;
+    }
+    .tip-card-content h3 {
+      color: #8eb974;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+    .tip-title {
+      color: #8eb974;
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+    .tip-card-content p {
+      color: #cbd5ff;
+      line-height: 1.5;
     }
     @media (max-width: 768px) {
-      .method-list .list1_img, .method-list .list1_desc,
-      .feedback-list .list1_img, .feedback-list .list1_desc {
-        width: 100%;
-        margin-left: 0;
+      .tip-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .tip-card-image {
+        flex: 0 0 auto;
+        margin-bottom: 15px;
+      }
+      .tip-card-content {
         text-align: center;
       }
     }
@@ -115,23 +162,12 @@
       width: 160px;
       height: 160px;
     }
-    .bg-soft-dark {
-      background: #0f1422;
-    }
     footer div {
       background: #080c14;
       border-top: 1px solid #8eb974;
     }
     .lead {
       color: #b9c2f0;
-    }
-    .badge-initiator {
-      background: #8eb974;
-      color: #0a0c15;
-      padding: 4px 12px;
-      border-radius: 40px;
-      font-size: 12px;
-      font-weight: bold;
     }
     #bannertext {
       text-shadow: 2px 2px 0 #0a0f1a;
@@ -141,31 +177,13 @@
       padding: 10px 20px;
       backdrop-filter: blur(3px);
     }
-    .feedback-list .list1_img img {
-      border-radius: 16px;
-      object-fit: cover;
-      width: 100%;
-      max-width: 140px;
-      height: auto;
-    }
-    .tip-title {
-      color: #8eb974;
-      font-size: 1.2rem;
-      margin-top: 5px;
-    }
     .logo-img {
       height: 48px;
       width: auto;
       vertical-align: middle;
     }
-    /* акцентные иконки */
     .fa-leaf, .fa-eye, .fa-microchip {
       color: #8eb974;
-    }
-    /* фоновая секция советов */
-    .tips-bg {
-      background: #8eb974;
-      color: #0a0c15;
     }
   </style>
 </head>
@@ -173,7 +191,6 @@
 <div class="container">
   <header style="padding-top:5px;">
     <div id="logo" style="float:left">
-      <!-- Логотип из папки pict (InitiatorClassSymbol.png) -->
       <img src="pict/InitiatorClassSymbol.png" alt="Initiator Logo" class="logo-img">
       <span style="font-weight: bold; font-size: 1.5rem; margin-left: 8px;">VALORANT<span style="color:#8eb974;">//</span>INITIATOR</span>
     </div>
@@ -210,7 +227,7 @@
   </nav>
 
   <div id="header-bottom" style="position:relative;">
-    <img src="pict/Agent_Map.jpg" style="width:100%; height: auto; object-fit: cover; max-height: 450px;" alt="Valorant Battle Banner">
+    <img src="pict/400px-Be_Mine_Sova_Card_Wide.png" style="width:100%; height: auto; object-fit: cover; max-height: 450px;" alt="Valorant Battle Banner">
     <div id="bannertext" style="position:absolute; top:12%; width:100%; text-align:center; color:white;">
       <div class="hidden-xs">
         <h1 style="font-size: 3.2rem;">🎯 SKYE · FADE · TEJO<br>
@@ -231,26 +248,22 @@
       <p class="lead">Skye · Fade · Tejo — как они начинают раунд и ломают оборону врага</p>
       <hr>
       <div class="col-md-4">
-        <!-- Аватар Skye из папки pict -->
         <img src="pict/Skye_ID_Card_Large.png" alt="Skye">
         <h3>🌿 SKYE — ПОВЕЛИТЕЛЬНИЦА ФЛОРЫ</h3>
         <p>Австралийская инициаторша, которая исцеляет и разведывает одновременно. Её звери — Тасу и Флеш-птица — прощупывают позиции врага, ослепляют и дают безупречную информацию. Skye не просто начинает раунд — она заставляет врагов выходить из укрытий, а команду получать хил и контроль. Идеальный пик для агрессивного энтри с поддержкой тиммейтов.</p>
       </div>
       <div class="col-md-4">
-        <!-- Аватар Fade из папки pict -->
         <img src="pict/Fade_ID_Card_Large.png" alt="Fade">
         <h3>🐺 FADE — ОХОТНИЦА ЗА СТРАХОМ</h3>
         <p>Турецкий кошмар для вражеской команды. Её Пожиратель страха и Призрачные глаза проходят сквозь стены, отмечая цели и накладывая оглушение. Fade — истинный зачинщик: её ульт «Ночь страха» заставляет врагов разбегаться, слышать шаги в панике. Никто не собирает инфу лучше неё. Она не просто атакует — она охотится.</p>
       </div>
       <div class="col-md-4">
-        <!-- Аватар Tejo из папки pict -->
         <img src="pict/Tejo_ID_Card_Large.png" alt="Tejo">
         <h3>💥 TEJO — ИНЖЕНЕР ХАОСА</h3>
         <p>Мастер подавления и дезориентации. Его специальная винтовка с зонными ЭМИ-снарядами отключает способности врагов, а дроны-разведчики висят над точкой, вынуждая защитников покидать удобные позиции. Tejo начинает перестрелку ещё до первого выстрела — враги уже оглушены и без утилит. Идеальный зачинщик для слаженной команды, которая любит методичные зачистки.</p>
       </div>
     </div>
     
-    <!-- Дополнительная информация об уникальном стиле -->
     <div class="row" style="text-align:center; margin-top: 25px; padding: 0 15px;">
       <div class="col-sm-4">
         <i class="fa fa-leaf fa-3x"></i>
@@ -270,121 +283,117 @@
     </div>
   </div>
 
-  <!-- Блок МЕТОДЫ / Тактики для SKYE, FADE, TEJO -->
+  <!-- Блок МЕТОДЫ / Тактики -->
   <div id="method">
     <div class="row" style="text-align:center; background:#0f1320; border-radius: 28px;">
-      <h2>📡 Как зачинщики (Skye, Fade, Tejo) запускают атаку</h2>
+      <h2>📡 Как зачинщики запускают атаку</h2>
       <p class="lead">Пошаговые протоколы инициации — от разведки до пост-плэнта</p>
       <hr>
 
       <ul class="method-list clearfix">
         <li class="list1_img">
-          <!-- Иллюстрация шаг 1: Brioche_Card_Wide.png из папки pict -->
-          <img src="pict/We_Can_Do_It_Spray.png" class="img-responsive" alt="Skye разведка">
+          <img src="pict/Brioche_Card_Wide.png" class="img-responsive" alt="Skye разведка">
         </li>
         <li class="list1_desc">
           <h3>Шаг 1. «Флора в бою» — разведка от Skye</h3>
-          <p>Перед заходом на точку Skye запускает Тасу (разведывающего тигра) по ключевым углам. Если зверь «чует» врага — команда получает точный пинг + ослепление цели. Одновременно с этим птичка-ослепитель сбивает прицелы врагам. Skye мгновенно даёт тиммейтам зелёный свет на энтри. Зачинщик не просто врывается — он заставляет врагов паниковать и выбегать под обстрел.</p>
+          <p>Перед заходом на точку Skye запускает Тасу по ключевым углам. Если зверь «чует» врага — команда получает точный пинг + ослепление. Одновременно птичка-ослепитель сбивает прицелы врагам. Skye мгновенно даёт тиммейтам зелёный свет на энтри.</p>
         </li>
       </ul>
 
       <ul class="method-list clearfix">
         <li class="list1_img">
-          <!-- Иллюстрация шаг 2: Ordinance_Request_Spray.png из папки pict -->
           <img src="pict/Ordinance_Request_Spray.png" class="img-responsive" alt="Fade ульт">
         </li>
         <li class="list1_desc">
           <h3>Шаг 2. «Кошмарный старт» — давление Fade</h3>
-          <p>Fade кидает «Призрачный глаз» (Prowler) в сторону пиков — он автоматически двигается к отмеченному врагу, оглушая его. А главная фишка: ульт «Ночь страха». Волна страха пронзает стены, отмечает всех противников, оставляет следы шагов. Команда видит врагов как на ладони, а зачинщики (Skye/Tejo) добивают беспомощные цели. Инициация превращается в кровавую охоту.</p>
+          <p>Fade кидает «Призрачный глаз» в сторону пиков — он двигается к отмеченному врагу, оглушая его. Ульт «Ночь страха» пронзает стены, отмечает противников и оставляет следы шагов. Команда видит врагов как на ладони.</p>
         </li>
       </ul>
 
       <ul class="method-list clearfix">
         <li class="list1_img">
-          <!-- Иллюстрация шаг 3: Doomscrolling_Spray.png из папки pict -->
           <img src="pict/Doomscrolling_Spray.png" class="img-responsive" alt="Tejo подавление">
         </li>
         <li class="list1_desc">
           <h3>Шаг 3. «Глушитель утилит» — тактика Tejo</h3>
-          <p>Пока Skye и Fade собирают инфу, Tejo запускает дрон-Stealth Wing над точкой. Враг не видит дрон, но зона ЭМИ подавляет все способности на 8 секунд. Cypher не ставит ловушки, Killjoy не включит турель, а Viper не активирует дым. После подавления следует залп специальных гранат. Tejo — король вступительных фаз: враги становятся просто мишенями без скиллов. Зачинщик превращает оборону в руины.</p>
+          <p>Tejo запускает дрон-Stealth Wing над точкой. Зона ЭМИ подавляет все способности на 8 секунд. Cypher не ставит ловушки, Killjoy не включит турель. Tejo — король вступительных фаз.</p>
         </li>
       </ul>
 
       <ul class="method-list clearfix">
         <li class="list1_img">
-          <!-- Иллюстрация шаг 4: We_Can_Do_It_Spray.png из папки pict -->
-          <img src="pict/Brioche_Card_Wide.png" class="img-responsive" alt="Постплэнт">
+          <img src="pict/We_Can_Do_It_Spray.png" class="img-responsive" alt="Постплэнт">
         </li>
         <li class="list1_desc">
           <h3>Шаг 4. «Синергия зачинщиков в пост-плэнте»</h3>
-          <p>После установки спайка Skye исцеляет союзников, Fade держит «Пожирателя» на подходе, а Tejo закидывает подавляющие сферы на точки входа врага. Три инициатора вместе создают непробиваемую стену: враг ослеплён, оглушён и лишён скиллов. В таком режиме даже 3 на 5 превращается в победу. Вот почему Skye, Fade и Tejo — идеальные зачинщики для любого состава.</p>
+          <p>Skye исцеляет союзников, Fade держит «Пожирателя» на подходе, Tejo закидывает подавляющие сферы. Три инициатора создают непробиваемую стену.</p>
         </li>
       </ul>
     </div>
   </div>
 
-  <!-- Блок СОВЕТЫ ПО ИГРЕ (вместо отзывов) -->
+  <!-- Блок СОВЕТЫ ПО ИГРЕ — НОВЫЙ ФОРМАТ под вертикальные картинки -->
   <div id="fitback">
-    <div class="row" style="text-align:center; background:#8eb974; color:#0a0c15; border-radius: 30px 30px 0 0;">
+    <div class="row" style="text-align:center; background:#8eb974; color:#0a0c15; border-radius: 30px 30px 0 0; padding-bottom: 20px;">
       <h2>🎮 Советы по игре за зачинщиков</h2>
       <hr style="background: #0a0c15;">
       <p class="lead" style="color:#0a2c0a;">Как выжать максимум из Skye, Fade и Tejo</p>
 
-      <!-- Совет #1: Skye -->
-      <ul class="feedback-list clearfix" style="background:#1a1f2d; color:#eee; text-align: left;">
-        <li class="list1_img">
-          <img src="pict/Skye_ID_Card_Large.png" class="img-responsive" style="border-radius: 50%; object-fit: cover;" alt="Skye tip">
-        </li>
-        <li class="list1_desc">
-          <h3 style="margin:0; padding:0; line-height:1.4; color:#8eb974;">🌿 СОВЕТ ДЛЯ SKYE</h3>
+      <!-- Совет #1: Skye с большой вертикальной картинкой -->
+      <div class="tip-card">
+        <div class="tip-card-image">
+          <img src="pict/Skye_Artwork_Full.png" alt="Skye full art">
+        </div>
+        <div class="tip-card-content">
+          <h3>🌿 СОВЕТ ДЛЯ SKYE</h3>
           <div class="tip-title">💡 Используй Тасу для безопасной разведки</div>
           <p>Твой тигр (Тасу) не только ослепляет врага, но и даёт звуковой сигнал при обнаружении. Запускай его перед входом на точку — если тигр «чихнул» и побежал, значит, там есть враг. Не экономь на разведке: информация стоит дороже любой способности. Также помни, что птичку-ослепитель можно контролировать в полёте — наводи её прямо в лицо оппоненту через угол.</p>
           <div class="tip-title">🔥 Лайфхак</div>
           <p>Исцеление (Regrowth) работает по области, но прерывается при получении урона. Прячься за укрытие, пока лечишь тиммейтов — так ты не потеряешь концентрацию.</p>
-        </li>
-      </ul>
+        </div>
+      </div>
 
       <!-- Совет #2: Fade -->
-      <ul class="feedback-list clearfix" style="background:#1a1f2d; color:#eee; text-align: left;">
-        <li class="list1_img">
-          <img src="pict/Fade_ID_Card_Large.png" class="img-responsive" style="border-radius: 50%; object-fit: cover;" alt="Fade tip">
-        </li>
-        <li class="list1_desc">
-          <h3 style="margin:0; padding:0; line-height:1.4; color:#8eb974;">🐺 СОВЕТ ДЛЯ FADE</h3>
+      <div class="tip-card">
+        <div class="tip-card-image">
+          <img src="pict/Fade_Artwork_Full.png" alt="Fade full art">
+        </div>
+        <div class="tip-card-content">
+          <h3>🐺 СОВЕТ ДЛЯ FADE</h3>
           <div class="tip-title">💡 Террор — твой главный союзник</div>
           <p>Призрачный глаз (Prowler) двигается к последнему отмеченному врагу. Поэтому перед его запуском обязательно кинь «Ночной дар» (Haunt) — он отметит врагов даже сквозь стены. Тогда Prowler сам найдёт цель и оглушит её. Это идеальная связка для зачистки углов. Кроме того, ульт «Ночь страха» оставляет следы шагов на 12 секунд — используй его, когда враги пытаются перегруппироваться.</p>
           <div class="tip-title">🔥 Лайфхак</div>
           <p>Твои сферы страха (Seize) блокируют не только передвижение, но и способности. Кидай их в чокпоинты (узкие проходы), чтобы запереть врагов в ловушку.</p>
-        </li>
-      </ul>
+        </div>
+      </div>
 
       <!-- Совет #3: Tejo -->
-      <ul class="feedback-list clearfix" style="background:#1a1f2d; color:#eee; text-align: left;">
-        <li class="list1_img">
-          <img src="pict/Tejo_ID_Card_Large.png" class="img-responsive" style="border-radius: 50%; object-fit: cover;" alt="Tejo tip">
-        </li>
-        <li class="list1_desc">
-          <h3 style="margin:0; padding:0; line-height:1.4; color:#8eb974;">💥 СОВЕТ ДЛЯ TEJO</h3>
+      <div class="tip-card">
+        <div class="tip-card-image">
+          <img src="pict/Tejo_Artwork_Full.png" alt="Tejo full art">
+        </div>
+        <div class="tip-card-content">
+          <h3>💥 СОВЕТ ДЛЯ TEJO</h3>
           <div class="tip-title">💡 Подавление — ключ к победе</div>
           <p>Твоя ЭМИ-сфера отключает способности врага на 8 секунд. Запускай её перед заходом на точку — Киллиджой лишится турели, Сайфер — ловушек, а Випер не сможет активировать дым. Без утилит враги становятся просто мишенями. Также используй дрон Stealth Wing для разведки: он невидим для врагов, но видит их тепловые следы.</p>
           <div class="tip-title">🔥 Лайфхак</div>
           <p>Постилль специальных гранат Special Delivery можно рикошетить от стен. Тренируй углы — так ты будешь доставать врагов за укрытиями, даже не видя их.</p>
-        </li>
-      </ul>
+        </div>
+      </div>
 
-      <!-- Совет #4: Общий для всех инициаторов -->
-      <ul class="feedback-list clearfix" style="background:#1a1f2d; color:#eee; text-align: left;">
-        <li class="list1_img">
-          <img src="pict/We_Can_Do_It_Spray.png" class="img-responsive" style="border-radius: 16px; object-fit: cover;" alt="Team tip">
-        </li>
-        <li class="list1_desc">
-          <h3 style="margin:0; padding:0; line-height:1.4; color:#8eb974;">🤝 ОБЩИЙ СОВЕТ: КОМАНДНАЯ ИГРА</h3>
+      <!-- Совет #4: Общий -->
+      <div class="tip-card">
+        <div class="tip-card-image">
+          <img src="pict/We_Can_Do_It_Spray.png" alt="Team tip">
+        </div>
+        <div class="tip-card-content">
+          <h3>🤝 ОБЩИЙ СОВЕТ: КОМАНДНАЯ ИГРА</h3>
           <div class="tip-title">💡 Синхронизация с дуэлянтами</div>
-          <p>Зачинщик не должен играть в одиночку. Всегда координируй свои действия с Джетт, Рейной или Фениксом. Перед тем как запустить ослепление/разведку, скажи в голосовой чат: «Вхожу через 3, 2, 1 — лови флешку». Тогда дуэлянт сразу зайдет на добивание. Также не забывай про ретроспективу: после смерти давай команде точные координаты врага (например, «баня, за бочкой, 30 хп»).</p>
+          <p>Зачинщик не должен играть в одиночку. Всегда координируй свои действия с Джетт, Рейной или Фениксом. Перед тем как запустить ослепление/разведку, скажи в голосовой чат: «Вхожу через 3, 2, 1 — лови флешку». Тогда дуэлянт сразу зайдет на добивание. Также не забывай про ретроспективу: после смерти давай команде точные координаты врага.</p>
           <div class="tip-title">🔥 Лайфхак</div>
           <p>Всегда имей план Б. Если первый заход провалился, быстро меняйте точку атаки — инициаторы дают информацию для быстрого ротейта.</p>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -399,7 +408,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script>
-  // Проверка загрузки картинок (поможет найти проблемы)
   document.addEventListener('DOMContentLoaded', function() {
     let images = document.querySelectorAll('img');
     let loaded = 0;
@@ -420,7 +428,6 @@
     }, 2000);
   });
 
-  // плавная прокрутка
   $(document).ready(function(){
     $('a[href^="#"]').on('click', function(event) {
       var target = $(this.getAttribute('href'));
