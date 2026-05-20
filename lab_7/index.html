@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <link rel="icon" type="image/x-icon" href="pict/initiatorfavi.ico">
+  <link rel="icon" type="image/x-icon" href="pict/ValoIcon.ico">
   <meta charset="utf-8">
   <title>Valorant | Зачинщики: Skye · Fade · Tejo — Мастера инициации</title>
   <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -9,13 +9,13 @@
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
     body {
-      background: #0a0c15;
+      background: #1a2a1f;  /* новый мягкий тёмно-зелёный фон */
       color: #eef2ff;
       font-family: 'Segoe UI', 'Poppins', system-ui, sans-serif;
     }
     .container {
-      background: #0e111b;
-      box-shadow: 0 0 35px rgba(0,0,0,0.6);
+      background: #1e2a22;  /* новый фон контейнера — приглушённый зелёный */
+      box-shadow: 0 0 35px rgba(0,0,0,0.5);
       border-radius: 0 0 20px 20px;
     }
     .clearfix::after {
@@ -28,7 +28,7 @@
       margin: 15px;
       padding: 10px;
       box-shadow: 0 0 12px rgba(142, 185, 116, 0.4);
-      background: #141a28;
+      background: #25382b;  /* карточки стали светлее */
       border-radius: 20px;
       overflow: hidden;
       transition: 0.2s;
@@ -46,15 +46,15 @@
       width: 61%;
       margin-left: 1em;
     }
-    /* Новый стиль для советов — картинка сверху, текст снизу (для вертикальных артов) */
+    /* Стиль для советов — убрана обводка, картинки больше */
     .tip-card {
       display: flex;
       flex-direction: row;
       align-items: flex-start;
-      gap: 25px;
+      gap: 30px;
       margin: 20px 15px;
-      padding: 20px;
-      background: #141a28;
+      padding: 25px;
+      background: #25382b;
       border-radius: 24px;
       box-shadow: 0 0 12px rgba(142, 185, 116, 0.3);
       transition: 0.2s;
@@ -64,15 +64,15 @@
       box-shadow: 0 0 18px #8eb974;
     }
     .tip-card-image {
-      flex: 0 0 180px;
+      flex: 0 0 260px;  /* увеличено с 180px до 260px */
       text-align: center;
     }
     .tip-card-image img {
       width: 100%;
-      max-width: 180px;
+      max-width: 260px;
       height: auto;
-      border-radius: 16px;
-      border: 3px solid #8eb974;
+      border-radius: 20px;
+      /* border убран */
       object-fit: cover;
     }
     .tip-card-content {
@@ -92,7 +92,7 @@
       margin-bottom: 5px;
     }
     .tip-card-content p {
-      color: #cbd5ff;
+      color: #d4e6d4;
       line-height: 1.5;
     }
     @media (max-width: 768px) {
@@ -103,14 +103,14 @@
       }
       .tip-card-image {
         flex: 0 0 auto;
-        margin-bottom: 15px;
+        margin-bottom: 20px;
       }
       .tip-card-content {
         text-align: center;
       }
     }
     .navbar-default {
-      background: #0f131f;
+      background: #1e2a22;
       border: none;
       border-bottom: 2px solid #8eb974;
     }
@@ -122,7 +122,7 @@
     .navbar-default .navbar-nav > li.active > a,
     .navbar-default .navbar-nav > li > a:hover {
       color: #8eb974;
-      background: #1a212f;
+      background: #2a3d30;
     }
     .btn-primary-custom {
       background-color: #8eb974;
@@ -163,11 +163,11 @@
       height: 160px;
     }
     footer div {
-      background: #080c14;
+      background: #1a2a1f;
       border-top: 1px solid #8eb974;
     }
     .lead {
-      color: #b9c2f0;
+      color: #c8e0c8;
     }
     #bannertext {
       text-shadow: 2px 2px 0 #0a0f1a;
@@ -184,6 +184,11 @@
     }
     .fa-leaf, .fa-eye, .fa-microchip {
       color: #8eb974;
+    }
+    /* фон для секции методов */
+    .method-bg {
+      background: #1e2a22;
+      border-radius: 28px;
     }
   </style>
 </head>
@@ -227,7 +232,7 @@
   </nav>
 
   <div id="header-bottom" style="position:relative;">
-    <img src="pict/400px-Be_Mine_Sova_Card_Wide.png" style="width:100%; height: auto; object-fit: cover; max-height: 450px;" alt="Valorant Battle Banner">
+    <img src="pict/Agent_Map.jpg" style="width:100%; height: auto; object-fit: cover; max-height: 450px;" alt="Valorant Battle Banner">
     <div id="bannertext" style="position:absolute; top:12%; width:100%; text-align:center; color:white;">
       <div class="hidden-xs">
         <h1 style="font-size: 3.2rem;">🎯 SKYE · FADE · TEJO<br>
@@ -285,7 +290,7 @@
 
   <!-- Блок МЕТОДЫ / Тактики -->
   <div id="method">
-    <div class="row" style="text-align:center; background:#0f1320; border-radius: 28px;">
+    <div class="row" style="text-align:center; background:#1e2a22; border-radius: 28px;">
       <h2>📡 Как зачинщики запускают атаку</h2>
       <p class="lead">Пошаговые протоколы инициации — от разведки до пост-плэнта</p>
       <hr>
@@ -332,14 +337,14 @@
     </div>
   </div>
 
-  <!-- Блок СОВЕТЫ ПО ИГРЕ — НОВЫЙ ФОРМАТ под вертикальные картинки -->
+  <!-- Блок СОВЕТЫ ПО ИГРЕ — увеличенные картинки, без обводки -->
   <div id="fitback">
     <div class="row" style="text-align:center; background:#8eb974; color:#0a0c15; border-radius: 30px 30px 0 0; padding-bottom: 20px;">
       <h2>🎮 Советы по игре за зачинщиков</h2>
       <hr style="background: #0a0c15;">
-      <p class="lead" style="color:#0a2c0a;">Как выжать максимум из Skye, Fade и Tejo</p>
+      <p class="lead" style="color:#1a3a1a;">Как выжать максимум из Skye, Fade и Tejo</p>
 
-      <!-- Совет #1: Skye с большой вертикальной картинкой -->
+      <!-- Совет #1: Skye с большой вертикальной картинкой (без обводки) -->
       <div class="tip-card">
         <div class="tip-card-image">
           <img src="pict/Skye_Artwork_Full.png" alt="Skye full art">
@@ -399,7 +404,7 @@
 </div>
 
 <footer>
-  <div style="text-align:right; background:#080c14; padding:1.2em; color: #8eb974;">
+  <div style="text-align:right; background:#1a2a1f; padding:1.2em; color: #8eb974;">
     <i class="fa fa-pagelines"></i> VALORANT // Инициация — Skye · Fade · Tejo <br>
     Академия зачинщиков | 2025-2026 | Начинай и доминируй
   </div>
