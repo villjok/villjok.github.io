@@ -8,7 +8,7 @@
   <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
-    body {
+     body {
       background: #1a2a1f;
       color: #eef2ff;
       font-family: 'Segoe UI', 'Poppins', system-ui, sans-serif;
@@ -23,7 +23,7 @@
       display: table;
       clear: both;
     }
-    .method-list, .feedback-list {
+    .method-list {
       list-style: none;
       margin: 15px;
       padding: 10px;
@@ -33,131 +33,24 @@
       overflow: hidden;
       transition: 0.2s;
     }
-    .method-list:hover, .feedback-list:hover {
+    .method-list:hover {
       transform: scale(1.01);
       box-shadow: 0 0 18px #8eb974;
     }
-    .method-list .list1_img, .feedback-list .list1_img {
+    .method-list .list1_img {
       float: left;
       width: 36%;
     }
-    .method-list .list1_desc, .feedback-list .list1_desc {
+    .method-list .list1_desc {
       float: left;
       width: 61%;
       margin-left: 1em;
     }
-
-    /* ===== СТИЛИ ДЛЯ БЛОКА СПОСОБНОСТЕЙ ===== */
-    .abilities-wrapper {
-      padding: 20px 0;
-    }
-    .agent-abilities {
-      background: #1e2a22;
-      border-radius: 28px;
-      padding: 25px;
-      margin-bottom: 40px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-    }
-    .agent-abilities h3 {
-      color: #8eb974;
-      font-size: 28px;
-      margin-top: 0;
-      margin-bottom: 5px;
-    }
-    .agent-abilities h3 small {
-      color: #a0c8a0;
-      font-size: 16px;
-    }
-    .agent-divider {
-      height: 3px;
-      background: linear-gradient(90deg, #8eb974, transparent);
-      width: 100%;
-      margin: 15px 0 25px 0;
-    }
-    .ability-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
-    .ability-card {
-      background: #25382b;
-      border-radius: 20px;
-      padding: 18px;
-      transition: all 0.2s ease;
-      border: 1px solid rgba(142, 185, 116, 0.3);
-    }
-    .ability-card:hover {
-      transform: translateY(-5px);
-      border-color: #8eb974;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    }
-    .ability-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 15px;
-      flex-wrap: wrap;
-    }
-    .ability-icon {
-      font-size: 28px;
-      font-weight: bold;
-      background: #1e2a22;
-      width: 48px;
-      height: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 12px;
-      color: #8eb974;
-      border: 1px solid #8eb974;
-    }
-    .ability-name {
-      font-size: 18px;
-      font-weight: bold;
-      color: #eef2ff;
-      margin: 0;
-    }
-    .ability-cost {
-      margin-left: auto;
-      background: #1a2a1f;
-      padding: 4px 10px;
-      border-radius: 20px;
-      font-size: 13px;
-      font-weight: bold;
-      color: #8eb974;
-    }
-    .ability-desc {
-      font-size: 13px;
-      color: #c8e0c8;
-      line-height: 1.5;
-      margin-bottom: 12px;
-    }
-    .ability-stats {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 10px;
-      font-size: 11px;
-    }
-    .stat {
-      background: #1a2a1f;
-      padding: 3px 8px;
-      border-radius: 15px;
-      color: #a0c8a0;
-    }
-    .ultimate-tag {
-      color: #ffaa44;
-      font-weight: bold;
-    }
-    @media (max-width: 992px) {
-      .ability-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-      }
-    }
-    @media (max-width: 576px) {
-      .ability-grid {
-        grid-template-columns: 1fr;
+    @media (max-width: 768px) {
+      .method-list .list1_img, .method-list .list1_desc {
+        width: 100%;
+        margin-left: 0;
+        text-align: center;
       }
     }
 
@@ -168,7 +61,7 @@
       gap: 30px;
       margin: 20px 15px;
       padding: 25px;
-      background: #25382b;
+      background: #2a3d30;
       border-radius: 24px;
       box-shadow: 0 0 12px rgba(142, 185, 116, 0.3);
       transition: 0.2s;
@@ -193,12 +86,12 @@
       text-align: left;
     }
     .tip-card-content h3 {
-      color: #8eb974;
+      color: #c8e6c8;
       margin-top: 0;
       margin-bottom: 10px;
     }
     .tip-title {
-      color: #8eb974;
+      color: #c8e6c8;
       font-size: 1.1rem;
       font-weight: bold;
       margin-top: 10px;
@@ -268,7 +161,7 @@
       border-top: 2px solid #8eb974;
       width: 80px;
     }
-    #specialist .col-md-4 img, .specialist-second img {
+    #specialist .col-md-4 img {
       border-radius: 50%;
       border: 3px solid #8eb974;
       object-fit: cover;
@@ -298,9 +191,68 @@
     .fa-leaf, .fa-eye, .fa-microchip {
       color: #8eb974;
     }
-    .method-bg {
-      background: #1e2a22;
-      border-radius: 28px;
+    .ability-list {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 10px;
+    }
+    .ability-list li {
+      margin-bottom: 12px;
+      border-bottom: 1px solid rgba(142, 185, 116, 0.2);
+      padding-bottom: 10px;
+    }
+    .ability-list li:last-child {
+      border-bottom: none;
+    }
+    .ability-name {
+      font-weight: bold;
+      color: #8eb974;
+    }
+    .ability-cost {
+      background: #1a2a1f;
+      padding: 2px 8px;
+      border-radius: 20px;
+      font-size: 12px;
+      margin-left: 8px;
+    }
+    .ultimate-cost {
+      background: #ffaa44;
+      color: #1a2a1f;
+    }
+    .ability-stats {
+      font-size: 12px;
+      color: #a0c8a0;
+      display: block;
+      margin-top: 4px;
+    }
+
+    .tips-section {
+      background: #8eb974;
+      color: #1a3a1a(82, 106, 67)
+      border-radius: 30px 30px 0 0;
+      padding-bottom: 20px;
+    }
+    .tips-section h2 {
+      color: #1a3a1a;
+    }
+    .tips-section .lead {
+      color: #1a3a1a;
+      font-weight: 500;
+    }
+    .tips-section hr {
+      border-top: 2px solid #1a3a1a;
+    }
+    .tip-card {
+      background: #2a3d30;
+    }
+    .tip-card-content h3 {
+      color: #d4e6d4;
+    }
+    .tip-card-content .tip-title {
+      color: #d4e6d4;
+    }
+    .tip-card-content p {
+      color: #c8e0c8;
     }
   </style>
 </head>
@@ -332,9 +284,8 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Главная</a></li>
         <li><a href="#specialist">Три зачинщика</a></li>
-        <li><a href="#abilities">Способности</a></li>
-        <li><a href="#method">Тактики</a></li>
-        <li><a href="#fitback">Советы</a></li>
+        <li><a href="#method">Чек-лист инициатора</a></li>
+        <li><a href="#fitback">Советы по игре</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#" style="padding-top:8px; padding-bottom:8px;">
@@ -383,236 +334,60 @@
     </div>
   </div>
 
-  <!-- ===== БЛОК СПОСОБНОСТЕЙ ===== -->
-  <div id="abilities" class="abilities-wrapper">
-    <div class="row" style="text-align:center;">
-      <h2>🔮 Арсенал инициаторов</h2>
-      <p class="lead">Способности Skye, Fade и Tejo — от базовых до ультимейтов</p>
-      <hr>
-    </div>
-
-    <!-- SKYE способности -->
-    <div class="agent-abilities">
-      <h3>🌿 SKYE <small>Повелительница флоры</small></h3>
-      <div class="agent-divider"></div>
-      <div class="ability-grid">
-        <div class="ability-card">
-          <div class="ability-header">
-            <div class="ability-icon"><i class="fa fa-heartbeat"></i></div>
-            <div class="ability-name">Отрастание</div>
-            <div class="ability-cost">150 💰</div>
-          </div>
-          <div class="ability-desc">Надеть целебную безделушку. Удерживайте кнопку огонь, чтобы исцелить союзников в радиусе действия и в зоне видимости. Можно использовать повторно, пока не закончится запас исцеления. Скай не может исцелять себя.</div>
-          <div class="ability-stats">
-            <span class="stat">100 ед. здоровья</span>
-            <span class="stat">20 ед./сек</span>
-          </div>
-        </div>
-        <div class="ability-card">
-          <div class="ability-header">
-            <div class="ability-icon"><i class="fa fa-paw"></i></div>
-            <div class="ability-name">Первопроходец</div>
-            <div class="ability-cost">300 💰</div>
-          </div>
-          <div class="ability-desc">Надеть брелок с тасманийским тигром. Нажмите, чтобы призвать хищника и взять его под контроль. Находясь под контролем, нажмите, чтобы прыгнуть вперед и взорваться с отрясающим взрывом, нанося урон противникам в зоне поражения.</div>
-          <div class="ability-stats">
-            <span class="stat">80 ед. урона</span>
-            <span class="stat">30 при прямом контакте</span>
-            <span class="stat">2.5-4с оглушения</span>
-          </div>
-        </div>
-        <div class="ability-card">
-          <div class="ability-header">
-            <div class="ability-icon"><i class="fa fa-sun-o"></i></div>
-            <div class="ability-name">Путеводный свет</div>
-            <div class="ability-cost">250 💰</div>
-          </div>
-          <div class="ability-desc">Надеть брелок с ястребом. Нажать, чтобы отправить его вперед. Удерживать нажатие, чтобы направить ястреба в сторону прицела. Повторно нажать, пока ястреб в полете, чтобы превратить его в вспышку.</div>
-          <div class="ability-stats">
-            <span class="stat">1-2.25с вспышка</span>
-            <span class="stat">60с перезарядка</span>
-          </div>
-        </div>
-        <div class="ability-card">
-          <div class="ability-header">
-            <div class="ability-icon"><i class="fa fa-star"></i></div>
-            <div class="ability-name">Искатели</div>
-            <div class="ability-cost ultimate-tag">★ ULT ★ 8 очков</div>
-          </div>
-          <div class="ability-desc">Надеть амулет «Искатель». Нажмите, чтобы отправить ястребик в цель. Если «Искатель» достигает цели, он приближается к ней и замедляет ее. Враги могут уничтожить «Искателей».</div>
-          <div class="ability-stats">
-            <span class="stat">3с близорукость</span>
-            <span class="stat">5с замедление 60%</span>
-            <span class="stat">120 ед. здоровья цели</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- FADE способности -->
-    <div class="agent-abilities">
-      <h3>🐺 FADE <small>Охотница за страхом</small></h3>
-      <div class="agent-divider"></div>
-      <div class="ability-grid">
-        <div class="ability-card">
-          <div class="ability-header">
-            <div class="ability-icon"><i class="fa fa-eye"></i></div>
-            <div class="ability-name">Ночной дар</div>
-            <div class="ability-cost">FREE 🎯</div>
-          </div>
-          <div class="ability-desc">Снарядите глаз страха. Нажмите, чтобы отправить его вперед. При попадании глаз раскрывается, отмечая врагов и оставляя следы их шагов.</div>
-          <div class="ability-stats">
-            <span class="stat">Отметка 3с</span>
-            <span class="stat">Следы шагов 12с</span>
-          </div>
-        </div>
-        <div class="ability-card">
-          <div class="ability-header">
-            <div class="ability-icon"><i class="fa fa-chain-broken"></i></div>
-            <div class="ability-name">Скованность страхом</div>
-            <div class="ability-cost">200 💰</div>
-          </div>
-          <div class="ability-desc">Снарядите сферу страха. Нажмите, чтобы бросить сферу, которая через мгновение падает на землю. При приземлении сфера взрывается, замедляя врагов и применяя к ним эффект «Страх».</div>
-          <div class="ability-stats">
-            <span class="stat">Замедление 50%</span>
-            <span class="stat">4с длительность</span>
-          </div>
-        </div>
-        <div class="ability-card">
-          <div class="ability-header">
-            <div class="ability-icon"><i class="fa fa-bolt"></i></div>
-            <div class="ability-name">Пожиратель страха</div>
-            <div class="ability-cost">250 💰</div>
-          </div>
-          <div class="ability-desc">Снарядите Пожирателя страха. Нажмите, чтобы отправить его к цели. Пожиратель преследует отмеченных врагов, оглушая их при контакте.</div>
-          <div class="ability-stats">
-            <span class="stat">Оглушение 3с</span>
-            <span class="stat">Автоматическое наведение</span>
-          </div>
-        </div>
-        <div class="ability-card">
-          <div class="ability-header">
-            <div class="ability-icon"><i class="fa fa-moon-o"></i></div>
-            <div class="ability-name">Ночь страха</div>
-            <div class="ability-cost ultimate-tag">★ ULT ★ 8 очков</div>
-          </div>
-          <div class="ability-desc">Волна страха пронзает стены, отмечая всех противников и оставляя следы их шагов. Враги в зоне поражения также получают эффект «Страх» и оглушение.</div>
-          <div class="ability-stats">
-            <span class="stat">Отметка всех врагов</span>
-            <span class="stat">Следы шагов 12с</span>
-            <span class="stat">Оглушение 2с</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- TEJO способности -->
-    <div class="agent-abilities">
-      <h3>💥 TEJO <small>Инженер хаоса</small></h3>
-      <div class="agent-divider"></div>
-      <div class="ability-grid">
-        <div class="ability-card">
-          <div class="ability-header">
-            <div class="ability-icon"><i class="fa fa-drone"></i></div>
-            <div class="ability-name">Стелс-дрон</div>
-            <div class="ability-cost">FREE 🎯</div>
-          </div>
-          <div class="ability-desc">Запустите невидимый дрон-разведчик. Дрон видит тепловые следы врагов через стены и отмечает их для команды.</div>
-          <div class="ability-stats">
-            <span class="stat">Невидим для врагов</span>
-            <span class="stat">Отметка 5с</span>
-          </div>
-        </div>
-        <div class="ability-card">
-          <div class="ability-header">
-            <div class="ability-icon"><i class="fa fa-microchip"></i></div>
-            <div class="ability-name">ЭМИ-сфера</div>
-            <div class="ability-cost">300 💰</div>
-          </div>
-          <div class="ability-desc">Создаёт зону электромагнитного импульса, которая отключает все способности врагов в радиусе действия на 8 секунд.</div>
-          <div class="ability-stats">
-            <span class="stat">Отключение способностей 8с</span>
-            <span class="stat">Радиус 10м</span>
-          </div>
-        </div>
-        <div class="ability-card">
-          <div class="ability-header">
-            <div class="ability-icon"><i class="fa fa-bomb"></i></div>
-            <div class="ability-name">Спецдоставка</div>
-            <div class="ability-cost">250 💰</div>
-          </div>
-          <div class="ability-desc">Специальные гранаты с дистанционным подрывом. Можно рикошетить от стен. Наносят урон и ослепляют врагов.</div>
-          <div class="ability-stats">
-            <span class="stat">75 ед. урона</span>
-            <span class="stat">Ослепление 2с</span>
-          </div>
-        </div>
-        <div class="ability-card">
-          <div class="ability-header">
-            <div class="ability-icon"><i class="fa fa-empire"></i></div>
-            <div class="ability-name">Армейский контракт</div>
-            <div class="ability-cost ultimate-tag">★ ULT ★ 9 очков</div>
-          </div>
-          <div class="ability-desc">Наносит массированный удар по выбранной зоне, уничтожая все постройки и способности врагов на площади.</div>
-          <div class="ability-stats">
-            <span class="stat">Уничтожает утилиты врага</span>
-            <span class="stat">150 ед. урона по площади</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Блок МЕТОДЫ / Тактики -->
+  <!-- Блок ЧЕК-ЛИСТ ИНИЦИАТОРА — все способности в одной карточке на агента -->
   <div id="method">
     <div class="row" style="text-align:center; background:#1e2a22; border-radius: 28px;">
       <h2>🧭 Чек-лист инициатора</h2>
-      <p class="lead">Как работают способности Skye, Fade и Tejo</p>
+      <p class="lead">Все способности Skye, Fade и Tejo — от базовых до ультимейтов</p>
       <hr>
 
       <ul class="method-list clearfix">
         <li class="list1_img">
-          <img src="pict/We_Can_Do_It_Spray.png" class="img-responsive" alt="Skye разведка">
+          <img src="pict/Skye_Artwork_Full.png" class="img-responsive" alt="Skye">
         </li>
         <li class="list1_desc">
-          <h3>🌿 «Флора в бою» — разведка от Skye</h3>
-          <p>Перед заходом на точку Skye запускает Тасу по ключевым углам. Если зверь «чует» врага — команда получает точный пинг + ослепление. Одновременно птичка-ослепитель сбивает прицелы врагам. Skye мгновенно даёт тиммейтам зелёный свет на энтри.</p>
+          <h3>🌿 SKYE — ВСЕ СПОСОБНОСТИ</h3>
+          <ul class="ability-list">
+            <li><span class="ability-name">💚 Отрастание</span> <span class="ability-cost">150💰</span><br>Исцеляет союзников в радиусе действия. <span class="ability-stats">100 ед. здоровья, 20 ед./сек. Скай не исцеляет себя.</span></li>
+            <li><span class="ability-name">🐅 Первопроходец (Тасу)</span> <span class="ability-cost">300💰</span><br>Призвать тигра, прыгнуть и взорваться с оглушением. <span class="ability-stats">80 урона, 30 при прямом контакте, 2.5-4с оглушения.</span></li>
+            <li><span class="ability-name">🦅 Путеводный свет (Флешка)</span> <span class="ability-cost">250💰</span><br>Отправить ястреба, превратить в вспышку. <span class="ability-stats">1-2.25с вспышка, 60с перезарядка.</span></li>
+            <li><span class="ability-name">⭐ Искатели (Ультимейт)</span> <span class="ability-cost ultimate-cost">★ 8 очков</span><br>Отправить искателя к цели, замедление. <span class="ability-stats">3с близорукость, 5с замедление 60%, 120 ед. здоровья цели.</span></li>
+          </ul>
         </li>
       </ul>
 
       <ul class="method-list clearfix">
         <li class="list1_img">
-          <img src="pict/Ordinance_Request_Spray.png" class="img-responsive" alt="Fade ульт">
+          <img src="pict/Fade_Artwork_Full.png" class="img-responsive" alt="Fade">
         </li>
         <li class="list1_desc">
-          <h3>🐺 «Кошмарный старт» — давление Fade</h3>
-          <p>Fade кидает «Призрачный глаз» в сторону пиков — он двигается к отмеченному врагу, оглушая его. Ульт «Ночь страха» пронзает стены, отмечает противников и оставляет следы шагов. Команда видит врагов как на ладони.</p>
+          <h3>🐺 FADE — ВСЕ СПОСОБНОСТИ</h3>
+          <ul class="ability-list">
+            <li><span class="ability-name">👁️ Ночной дар</span> <span class="ability-cost">FREE 🎯</span><br>Глаз страха отмечает врагов и оставляет следы шагов. <span class="ability-stats">Отметка 3с, следы шагов 12с.</span></li>
+            <li><span class="ability-name">⛓️ Скованность страхом</span> <span class="ability-cost">200💰</span><br>Сфера страха взрывается, замедляя врагов. <span class="ability-stats">Замедление 50%, 4с длительность.</span></li>
+            <li><span class="ability-name">🐺 Пожиратель страха</span> <span class="ability-cost">250💰</span><br>Преследует отмеченных врагов, оглушая их. <span class="ability-stats">Оглушение 3с, автоматическое наведение.</span></li>
+            <li><span class="ability-name">🌙 Ночь страха (Ультимейт)</span> <span class="ability-cost ultimate-cost">★ 8 очков</span><br>Волна страха отмечает всех врагов и оставляет следы. <span class="ability-stats">Отметка всех врагов, следы 12с, оглушение 2с.</span></li>
+          </ul>
         </li>
       </ul>
 
       <ul class="method-list clearfix">
         <li class="list1_img">
-          <img src="pict/Doomscrolling_Spray.png" class="img-responsive" alt="Tejo подавление">
+          <img src="pict/Tejo_Artwork_Full.png" class="img-responsive" alt="Tejo">
         </li>
         <li class="list1_desc">
-          <h3>💥 «Глушитель утилит» — тактика Tejo</h3>
-          <p>Tejo запускает дрон-Stealth Wing над точкой. Зона ЭМИ подавляет все способности на 8 секунд. Cypher не ставит ловушки, Killjoy не включит турель. Tejo — король вступительных фаз.</p>
-        </li>
-      </ul>
-
-      <ul class="method-list clearfix">
-        <li class="list1_img">
-          <img src="pict/Brioche_Card_Wide.png" class="img-responsive" alt="Постплэнт">
-        </li>
-        <li class="list1_desc">
-          <h3>🤝 «Синергия зачинщиков» — пост-плэнт</h3>
-          <p>Skye исцеляет союзников, Fade держит «Пожирателя» на подходе, Tejo закидывает подавляющие сферы. Три инициатора создают непробиваемую стену.</p>
+          <h3>💥 TEJO — ВСЕ СПОСОБНОСТИ</h3>
+          <ul class="ability-list">
+            <li><span class="ability-name">🛸 Стелс-дрон</span> <span class="ability-cost">FREE 🎯</span><br>Невидимый дрон видит тепловые следы врагов. <span class="ability-stats">Невидим для врагов, отметка 5с.</span></li>
+            <li><span class="ability-name">⚡ ЭМИ-сфера</span> <span class="ability-cost">300💰</span><br>Отключает способности врагов в радиусе. <span class="ability-stats">Отключение способностей 8с, радиус 10м.</span></li>
+            <li><span class="ability-name">💣 Спецдоставка</span> <span class="ability-cost">250💰</span><br>Гранаты с рикошетом, урон и ослепление. <span class="ability-stats">75 урона, ослепление 2с.</span></li>
+            <li><span class="ability-name">🔥 Армейский контракт (Ультимейт)</span> <span class="ability-cost ultimate-cost">★ 9 очков</span><br>Массированный удар по зоне. <span class="ability-stats">Уничтожает утилиты врага, 150 урона по площади.</span></li>
+          </ul>
         </li>
       </ul>
     </div>
   </div>
 
-  <!-- Блок СОВЕТЫ ПО ИГРЕ -->
   <div id="fitback">
     <div class="row" style="text-align:center; background:#8eb974; color:#0a0c15; border-radius: 30px 30px 0 0; padding-bottom: 20px;">
       <h2>🎮 Советы по игре за зачинщиков</h2>
@@ -621,12 +396,12 @@
 
       <div class="tip-card">
         <div class="tip-card-image">
-          <img src="pict/Skye_Artwork_Full.png" alt="Skye full art">
+          <img src="pict/We_Can_Do_It_Spray.png" alt="Skye full art">
         </div>
         <div class="tip-card-content">
           <h3>🌿 СОВЕТ ДЛЯ SKYE</h3>
           <div class="tip-title">💡 Используй Тасу для безопасной разведки</div>
-          <p>Твой тигр (Тасу) не только ослепляет врага, но и даёт звуковой сигнал при обнаружении. Запускай его перед входом на точку — если тигр «чихнул» и побежал, значит, там есть враг. Не экономь на разведке: информация стоит дороже любой способности.</p>
+          <p>Твой тигр (Тасу) не только ослепляет врага, но и даёт звуковой сигнал при обнаружении. Запускай его перед входом на точку — если тигр «чихнул» и побежал, значит, там есть враг.</p>
           <div class="tip-title">🔥 Лайфхак</div>
           <p>Исцеление работает по области, но прерывается при получении урона. Прячься за укрытие, пока лечишь тиммейтов.</p>
         </div>
@@ -634,7 +409,7 @@
 
       <div class="tip-card">
         <div class="tip-card-image">
-          <img src="pict/Fade_Artwork_Full.png" alt="Fade full art">
+          <img src="pict/Doomscrolling_Spray.png" alt="Fade full art">
         </div>
         <div class="tip-card-content">
           <h3>🐺 СОВЕТ ДЛЯ FADE</h3>
@@ -647,7 +422,7 @@
 
       <div class="tip-card">
         <div class="tip-card-image">
-          <img src="pict/Tejo_Artwork_Full.png" alt="Tejo full art">
+          <img src="pict/Ordinance_Request_Spray.png" alt="Tejo full art">
         </div>
         <div class="tip-card-content">
           <h3>💥 СОВЕТ ДЛЯ TEJO</h3>
